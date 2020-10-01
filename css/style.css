@@ -1,0 +1,101 @@
+body {
+  min-width: 500px;
+  margin: 0px;
+  background-image: url('../images/background.png');
+}
+
+main {
+  padding: 10px;
+}
+
+header {
+  min-width: 400px;
+  background-color: #d0d4cb;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+h4 {
+  text-indent: 10px;
+  text-decoration-line: underline;
+}
+
+.Requirements, .Features {
+  display: inline-block;
+  width: auto;
+  margin-right: 20px;
+}
+
+i {
+  display: block;
+  margin-left: 50%;
+}
+
+nav a {
+  min-width: 100px;
+  margin-left: 10%;
+  width: 20%;
+  height: 50px;
+  color: #000000;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #cec5c5;
+  transition: background-color, 0.5s, linear, 0.2s;
+}
+
+nav a.current {
+  background-color: white;
+}
+
+nav a:hover {
+  background-color: white;
+}
+
+li {
+  font-family: sans-serif;
+}
+
+li div {
+  font-style: italic;
+}
+
+li.pic {
+  width: auto;
+  padding: 10px;
+  margin-right: 6%;
+  display: inline-block;
+}
+
+li.pic img {
+  width: 100px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  transition-property: width;
+  transition-duration: 0.6s;
+  transition-delay: 0.3s;
+}
+
+li.pic img:hover {
+  width: 200px;
+}
+
+a {
+  color: black;
+}
+
+.images img {
+  width: 200px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
