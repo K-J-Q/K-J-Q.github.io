@@ -19,8 +19,8 @@ nav {
 }
 
 a {
+  font-size: 2rem;
   display: block;
-  font-size: 8vw;
   color: #607d8b;
   text-align: right;
   padding: 5px;
