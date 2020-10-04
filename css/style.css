@@ -1,87 +1,40 @@
 body {
   margin: 0px;
-  background-image: url('../images/background.png');
-}
-
-main {
-  padding: 10px;
 }
 
 header {
-  background-color: #d0d4cb;
-  padding: 20px;
+  background-color: #c5f5c5;
 }
 
 h1 {
+  margin: 0px;
+  padding: 10px;
+  font-size: 10vw;
   display: inline-block;
-  margin-right: 10px;
-}
-
-h2 {
-  text-decoration: underline;
-}
-
-img {
-  border-radius: 5px;
-}
-
-.Requirements, .Features {
-  display: inline-block;
-  width: auto;
-  margin-right: 20px;
-}
-
-i {
-  display: block;
-  margin-left: 50%;
-}
-
-a {
-  color: black;
-  text-align: center;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-nav {
-  display: inline-block;
-}
-
-nav a {
-  padding: 20px;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-}
-
-nav a:hover {
-  background-color: #dadcd9;
-  text-decoration: underline;
-}
-
-nav a.current {
-  background-color: white;
-  text-decoration: none;
-}
-
-li {
   font-family: sans-serif;
 }
 
-li div {
-  font-style: italic;
+nav {
+  display: none;
 }
 
-li.pic {
-  padding: 10px;
+a {
+  display: block;
+  font-size: 2em;
+  color: #607d8b;
+  text-align: right;
+  padding: 5px;
+  font-family: sans-serif;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-li.pic img {
-  border-style: solid;
-  border-width: 2px;
+a.active {
+  text-decoration: underline;
 }
 
-span {
-  padding: 15px 0px 12px 0px;
-  border-style: solid;
-  border-width: 1px;
+#dropdown {
+  width: 12vw;
+  float: right;
+  margin: 0.5em;
 }
