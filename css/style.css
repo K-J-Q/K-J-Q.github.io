@@ -1,5 +1,4 @@
 body {
-  min-width: 500px;
   margin: 0px;
   background-image: url('../images/background.png');
 }
@@ -14,7 +13,8 @@ header {
 }
 
 h1 {
-  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 h2 {
@@ -41,6 +41,10 @@ a {
   text-align: center;
   font-weight: bold;
   text-decoration: none;
+}
+
+nav {
+  display: inline-block;
 }
 
 nav a {
@@ -76,27 +80,8 @@ li.pic img {
   border-width: 2px;
 }
 
-.project {
-  background-color: #E6E6E6;
-  border-style: groove;
-  margin-left: 3%;
-  padding: 1%;
-  float: left;
-}
-
-.project img {
-  display: inline-block;
-  float: left;
-  width: 60%;
-}
-
-.details {
-  display: inline-block;
-  margin-left: 2%;
-  width: 35%;
-}
-
-.details a {
-  padding: 10px;
+span {
+  padding: 15px 0px 12px 0px;
   border-style: solid;
+  border-width: 1px;
 }
