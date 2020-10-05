@@ -1,9 +1,15 @@
 body {
   margin: 0px;
+  background-image: url("../images/background.png");
 }
 
-header {
-  background-color: #c5f5c5;
+span {
+  width: 90vw;
+  display: block;
+  margin-left: 2.5%;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
 }
 
 h1 {
