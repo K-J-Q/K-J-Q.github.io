@@ -75,7 +75,7 @@ a.active {
   padding: 20px;
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 400px) {
   #dropdown {
     display: none;
   }
