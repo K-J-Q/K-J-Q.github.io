@@ -1,1 +1,0 @@
-# JQwebsite.me
