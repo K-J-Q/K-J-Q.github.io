@@ -12,6 +12,11 @@ span {
   border-radius: 5px;
 }
 
+header {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
 h1 {
   margin: 0px;
   padding: 10px;
@@ -40,7 +45,7 @@ li div {
 }
 
 nav a {
-  font-size: 8vw;
+  font-size: 2em;
   display: block;
   color: #607d8b;
   text-align: right;
@@ -60,13 +65,12 @@ a.active {
 }
 
 #dropdown {
-  width: 10vw;
+  width: 4em;
   float: right;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 6px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   #dropdown {
     display: none;
   }
