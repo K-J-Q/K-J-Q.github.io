@@ -71,7 +71,7 @@ a.active {
   margin-top: 6px;
 }
 
-@media screen and (min-width: 600px; ) {
+@media screen and (min-width: 600px) {
   #dropdown {
     display: none;
   }
