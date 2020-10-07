@@ -15,14 +15,14 @@ span {
 h1 {
   margin: 0px;
   padding: 10px;
-  font-size: 10vw;
+  font-size: 3em;
   display: inline-block;
   font-family: sans-serif;
 }
 
 h2 {
   padding: 10px;
-  font-size: 6vw;
+  font-size: 2em;
   text-decoration: underline;
 }
 
@@ -60,7 +60,14 @@ a.active {
 }
 
 #dropdown {
-  width: 12vw;
+  width: 10vw;
   float: right;
-  margin: 0.5em;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+@media screen and (min-width: 600px) {
+  #dropdown {
+    display: none;
+  }
 }

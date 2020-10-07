@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+div {
+  border-style: solid;
+  padding: 10px;
+}
+
+label {
+  font-size: 8vw;
+  font-family: sans-serif;
+}
+
+input {
+  float: right;
+  width: auto;
+}
