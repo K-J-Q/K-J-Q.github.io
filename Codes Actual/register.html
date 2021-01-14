@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li id="current"><a href="">Login/Register</a></li>
+      </ul>
+    </nav>
+    <h1>Register</h1>
+    <form
+      id="register"
+      class="lgr"
+      method="post"
+      action=" http://jkorpela.fi/cgi-bin/echo.cgi"
+    >
+      <label>Name: </label>
+      <input
+        type="text"
+        name="name"
+        pattern="[A-Za-z]{5,}"
+        title="Letters only. At least 5 characters"
+        required
+        placeholder="Type your name here"
+      /><br /><br />
+      <label>Mobile Number: </label>
+      <input
+        type="tel"
+        name="number"
+        pattern="[0-9]{8}"
+        title="Singapore number only, without the +65 prefix"
+        placeholder="Your number"
+        required
+      /><br /><br />
+      <div id="gender">
+        <label>Gender: </label>
+        <input name="sex" type="radio" value="M" required /> Male &nbsp;&nbsp;
+        <input name="sex" type="radio" value="F" required /> Female
+      </div>
+      <br />
+      <label>Email Address: </label>
+      <input
+        type="email"
+        name="email"
+        placeholder="Your email"
+        required
+      /><br /><br />
+      <label>Password: </label>
+      <input
+        type="password"
+        name="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+        required
+      /><br /><br />
+      <label>Address: </label><br />
+      <textarea
+        name="address"
+        cols="50"
+        rows="3"
+        placeholder="Your address "
+        required
+      ></textarea
+      ><br />
+      <input id="signupButton" type="submit" value="Sign Up!" /><br />
+      Already have an account? Sign in <a href="login.html">here</a>
+    </form>
+    <footer>
+      <div id="validated">
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!"
+        /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!"
+        /></a>
+      </div>
+      <br />
+      Copyright &copy; 2021 Jian Quan
+    </footer>
+  </body>
+</html>

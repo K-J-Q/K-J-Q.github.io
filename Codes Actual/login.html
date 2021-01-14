@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li id="current"><a href="">Login/Register</a></li>
+      </ul>
+    </nav>
+    <h1>Login</h1>
+    <form
+      id="login"
+      class="lgr"
+      method="post"
+      action=" http://jkorpela.fi/cgi-bin/echo.cgi"
+    >
+      <label>Email Address: </label>
+      <input
+        type="email"
+        name="email"
+        placeholder="Your email"
+        required
+      /><br /><br />
+      <label>Password: </label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Your password"
+        required
+      /><br />
+      <input id="loginButton" type="submit" value="Login" /><br />
+      Don't have an account? <a href="register.html">Register Now!</a>
+    </form>
+    <footer>
+      <div id="validated">
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!"
+        /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!"
+        /></a>
+      </div>
+      <br />
+      Copyright &copy; 2021 Jian Quan
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li id="current"><a href="order.html">Order Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li>
+          <div class="dropdown">
+            Login/Register
+            <div class="dropdown-content">
+              <a href="login.html">Login</a>
+              <a href="register.html">Register</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <form
+      id="orderForm"
+      method="post"
+      action=" http://jkorpela.fi/cgi-bin/echo.cgi"
+    >
+      <fieldset>
+        <legend>Delivery Details</legend>
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          pattern="[A-Za-z]{5,}"
+          title="Letters only. At least 5 characters"
+          placeholder="Type your name here"
+          required
+        />
+        <br /><br />
+        <label>Address</label><br />
+        <textarea
+          name="address"
+          cols="80"
+          rows="3"
+          placeholder="Type your address here"
+          required
+        ></textarea>
+        <br /><br />
+        <label>Delivery date</label>
+        <input type="date" required />
+        <br /><br />
+        <label>Delivery time</label>
+        <input type="time" required />
+        <br /><br />
+        <label>Additional comments</label><br />
+        <textarea
+          name="comment"
+          cols="80"
+          rows="5"
+          placeholder="Additional Requests: more chili sause, more spoons, leave on doorstep, etc"
+        ></textarea>
+      </fieldset>
+      <fieldset id="order">
+        <legend>Order</legend>
+        <div id="foodQuantity">
+          <label>Food Choice</label>
+          <select name="food1" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity1"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food2" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity2"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food3" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity3"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food4" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity4"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food5" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity5"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food6" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity6"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food7" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity7"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food8" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity8"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food9" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity9"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food10" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity10"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food11" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity11"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food12" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity12"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food13" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity13"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food14" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity14"
+            required
+          />
+          <label>Food Choice</label>
+          <select name="food15" required>
+            <option disabled value="">─── Carbs ───</option>
+            <option value="1">White Rice</option>
+            <option value="2">Bee Hoon Noodles</option>
+            <option disabled>─── Meats ───</option>
+            <option value="3">Braised Pork Belly</option>
+            <option value="4">Braised Pork Ribs</option>
+            <option value="5">Curry Chicken</option>
+            <option value="6">Fried Chicken Cubes</option>
+            <option value="7">Fried Fish in Soy Sauce</option>
+            <option value="8">Fried Pork Chop</option>
+            <option value="9">Kung Pow Chicken</option>
+            <option value="10">Long Beans with Minced Meat</option>
+            <option value="11">Luncheon Meat</option>
+            <option value="12">Ngoh Hiang</option>
+            <option value="13">Pig's Liver</option>
+            <option value="14">Pork Chop in Sweet & Sour Sauce</option>
+            <option value="15">Prawn Paste Chicken</option>
+            <option value="16">Satay</option>
+            <option value="17">Sweet & Sour Pork</option>
+            <option disabled>─── Vegetables ───</option>
+            <option value="18">Bok Choy</option>
+            <option value="19">Broccoli</option>
+            <option value="20">Cabbage</option>
+            <option value="21">Curry Veg</option>
+            <option value="22">Egg Tofu</option>
+            <option value="23">Eggplant</option>
+            <option value="24">Fried Egg</option>
+            <option value="25">Mabo Tofu</option>
+            <option value="26">Nai Bai</option>
+            <option value="27">Omelette</option>
+            <option value="28">Spinach</option>
+            <option value="29">Steamed Egg</option>
+            <option disabled>─── Others ───</option>
+            <option value="30">Curry Puff</option>
+          </select>
+          <label>Quantity (servings)</label>
+          <input
+            type="number"
+            min="0"
+            max="20"
+            value="0"
+            name="quantity15"
+            required
+          />
+          <p>
+            For Orders of more than 15 dishes, call one of our cooks! Number
+            under the "Contact Us" section.
+          </p>
+        </div>
+      </fieldset>
+      <div id="submitContainer">
+        <input type="submit" id="submitButton" /><br /><br />
+        <input type="reset" id="resetButton" />
+      </div>
+    </form>
+    <footer>
+      <div id="validated">
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!"
+        /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!"
+        /></a>
+      </div>
+      <br />
+      Copyright &copy; 2021 Jian Quan
+    </footer>
+  </body>
+</html>
