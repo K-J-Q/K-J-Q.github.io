@@ -2,13 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Order</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
     <nav>
       <ul>
+        <li id="notbutton">
+          <img id="logo" src="images/logo.png" alt="" />
+        </li>
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li id="current"><a href="order.html">Order Now</a></li>
@@ -24,44 +27,55 @@
         </li>
       </ul>
     </nav>
+
+    <nav id="order_menu_title">
+      <ul>
+        <li><a href="menu.html#carb">Carbs</a></li>
+        <li><a href="menu.html#meat">Meats</a></li>
+        <li><a href="menu.html#vege">Vegs</a></li>
+        <li><a href="menu.html#other">Others</a></li>
+      </ul>
+    </nav>
     <form
       id="orderForm"
       method="post"
       action=" http://jkorpela.fi/cgi-bin/echo.cgi"
     >
-      <fieldset>
+      <fieldset id="details">
         <legend>Delivery Details</legend>
         <label>Name</label>
         <input
           type="text"
           name="name"
-          pattern="[A-Za-z]{5,}"
+          pattern="[A-Za-z ]{5,}"
           title="Letters only. At least 5 characters"
           placeholder="Type your name here"
           required
         />
+
         <br /><br />
+        <label>Delivery date</label>
+        <input type="date" name="date" required />
+        <br /><br />
+        <label>Delivery time</label>
+        <input type="time" name="time" required />
+        <br /><br /><br />
         <label>Address</label><br />
         <textarea
           name="address"
           cols="80"
           rows="3"
           placeholder="Type your address here"
+          minlength="10"
           required
         ></textarea>
-        <br /><br />
-        <label>Delivery date</label>
-        <input type="date" required />
-        <br /><br />
-        <label>Delivery time</label>
-        <input type="time" required />
         <br /><br />
         <label>Additional comments</label><br />
         <textarea
           name="comment"
           cols="80"
           rows="5"
-          placeholder="Additional Requests: more chili sause, more spoons, leave on doorstep, etc"
+          placeholder="Additional Requests: more chili sauce, more spoons, leave on doorstep, etc"
         ></textarea>
       </fieldset>
       <fieldset id="order">
@@ -107,7 +121,7 @@
           <label>Quantity (servings)</label>
           <input
             type="number"
-            min="0"
+            min="1"
             max="20"
             value="0"
             name="quantity1"

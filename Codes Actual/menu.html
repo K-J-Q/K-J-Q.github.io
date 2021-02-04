@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Pricing and Menu</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
     <nav>
       <ul>
+        <li id="notbutton">
+          <img id="logo" src="images/logo.png" alt="" />
+        </li>
         <li><a href="index.html">Home</a></li>
-        <li id="current"><a href="menu.html">Menu</a></li>
+        <li id="current"><a href="menu.html">Price & Menu</a></li>
         <li><a href="order.html">Order Now</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li>
@@ -24,6 +27,9 @@
         </li>
       </ul>
     </nav>
+    <a id="up_button" href="#price"
+      ><img src="images/up-button.png" alt="up-button"
+    /></a>
     <div id="price">
       <h1>Price</h1>
       <table>
@@ -32,6 +38,7 @@
           <th>Public Price</th>
           <th>Staff/Student Price</th>
         </tr>
+
         <tr>
           <td>2 Veg</td>
           <td>$2.30</td>
@@ -57,11 +64,30 @@
           <td>$4.00</td>
           <td>$3.50</td>
         </tr>
+        <tr>
+          <td>White Rice</td>
+          <td>$0.80</td>
+          <td>$0.50</td>
+        </tr>
+        <tr>
+          <td>Bee Hoon</td>
+          <td>$1.20</td>
+          <td>$1.00</td>
+        </tr>
       </table>
     </div>
+
     <div id="menus">
+      <nav id="menu_menu_title">
+        <ul>
+          <li><a href="#carb">Carbs</a></li>
+          <li><a href="#meat">Meats</a></li>
+          <li><a href="#vege">Vegs</a></li>
+          <li><a href="#other">Others</a></li>
+        </ul>
+      </nav>
       <h1>Carbs</h1>
-      <div class="menu_item">
+      <div id="carb" class="menu_item">
         <img src="images/Rice.jpg" alt="" /><br />
         <b>White Rice</b>
         <br /><br />
@@ -82,7 +108,7 @@
       <span></span>
       <span></span>
       <h1>Meats</h1>
-      <div class="menu_item">
+      <div id="meat" class="menu_item">
         <img src="images/BraisedPork.jpg" alt="" /><br />
         <b>Braised Pork Belly </b>
         <br /><br />
@@ -110,7 +136,7 @@
           too.
         </p>
       </div>
-
+      <span></span>
       <div class="menu_item">
         <img src="images/FriedChickenCubes.jpg" alt="" /><br />
         <b>Fried Chicken Cubes </b>
@@ -148,6 +174,7 @@
           (traditionally Welsh onion only), and chili peppers.
         </p>
       </div>
+      <span></span>
       <div class="menu_item">
         <img src="images/LongBeanswithMincedMeat.jpg" alt="" /><br />
         <b>Long Beans with Minced Meat </b>
@@ -182,6 +209,7 @@
           essential nutrients such as amino acids and fatty acids
         </p>
       </div>
+      <span></span>
       <div class="menu_item">
         <img src="images/PorkChopinSweet&SourSauce.jpg" alt="" /><br />
         <b>Pork Chop in Sweet & Sour Sauce </b>
@@ -219,10 +247,8 @@
         </p>
       </div>
       <span></span>
-      <span></span>
-      <span></span><span></span>
       <h1>Vegetables</h1>
-      <div class="menu_item">
+      <div id="vege" class="menu_item">
         <img src="images/BokChoy.jpg" alt="" /><br />
         <b>Bok Choy</b>
         <br /><br />
@@ -243,6 +269,7 @@
         <br /><br />
         <p>Simple, Delicious and healthy</p>
       </div>
+      <span></span>
       <div class="menu_item">
         <img src="images/CurryVeg.jpg" alt="" /><br />
         <b>Curry Veg </b>
@@ -277,6 +304,7 @@
         <br /><br />
         <p>Sunny-Side up with slightly undercooked yolk</p>
       </div>
+      <span></span>
       <div class="menu_item">
         <img src="images/MaboTofu.jfif" alt="" /><br />
         <b>Mabo Tofu </b>
@@ -308,15 +336,16 @@
         <br /><br />
         <p>Packed with crunch in every bite</p>
       </div>
+      <span></span>
       <div class="menu_item">
         <img src="images/SteamedEgg.jpg" alt="" /><br />
         <b>Steamed Egg </b>
         <br /><br />
         <p>Soft, with a pudding-like texture.</p>
       </div>
-      <span></span><span></span>
+      <span></span><span></span><span></span><span></span>
       <h1>Others</h1>
-      <div class="menu_item">
+      <div id="other" class="menu_item">
         <img src="images/CurryPuff.jpg" alt="" /><br />
         <b>Curry Puff </b>
         <br /><br />

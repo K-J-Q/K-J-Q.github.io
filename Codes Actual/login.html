@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
     <nav>
       <ul>
+        <li id="notbutton">
+          <img id="logo" src="images/logo.png" alt="" />
+        </li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
+        <li><a href="menu.html">Price & Menu</a></li>
         <li><a href="order.html">Order Now</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li id="current"><a href="">Login/Register</a></li>
@@ -37,10 +40,11 @@
         placeholder="Your password"
         required
       /><br />
+      <br /><br />
       <input id="loginButton" type="submit" value="Login" /><br />
       Don't have an account? <a href="register.html">Register Now!</a>
     </form>
-    <footer>
+    <footer id="push">
       <div id="validated">
         <a href="http://jigsaw.w3.org/css-validator/check/referer">
           <img

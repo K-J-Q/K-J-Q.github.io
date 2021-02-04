@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Register</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
     <nav>
       <ul>
+        <li id="notbutton">
+          <img id="logo" src="images/logo.png" alt="" />
+        </li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
+        <li><a href="menu.html">Price & Menu</a></li>
         <li><a href="order.html">Order Now</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li id="current"><a href="">Login/Register</a></li>
@@ -36,7 +39,7 @@
       <input
         type="tel"
         name="number"
-        pattern="[0-9]{8}"
+        pattern="[6,7,9]{1}[0-9]{7}"
         title="Singapore number only, without the +65 prefix"
         placeholder="Your number"
         required
@@ -61,8 +64,8 @@
         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
         required
-      /><br /><br />
-      <label>Address: </label><br />
+      /><br /><br /><br />
+      <label>Address: </label> <br />
       <textarea
         name="address"
         cols="50"
@@ -70,9 +73,9 @@
         placeholder="Your address "
         required
       ></textarea
-      ><br />
+      ><br /><br /><br />
       <input id="signupButton" type="submit" value="Sign Up!" /><br />
-      Already have an account? Sign in <a href="login.html">here</a>
+      Already have an account? Login <a href="login.html">here</a>
     </form>
     <footer>
       <div id="validated">
