@@ -7,27 +7,28 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li id="notbutton">
-          <img id="logo" src="images/logo.png" alt="" />
-        </li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li id="current"><a href="order.html">Order Now</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li>
-          <div class="dropdown">
-            Login/Register
-            <div class="dropdown-content">
-              <a href="login.html">Login</a>
-              <a href="register.html">Register</a>
+    <header>
+      <nav>
+        <ul>
+          <li id="notbutton">
+            <img id="logo" src="images/logo.png" alt="" />
+          </li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li id="current"><a href="order.html">Order Now</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>
+            <div class="dropdown">
+              Login/Register
+              <div class="dropdown-content">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
-    </nav>
-
+          </li>
+        </ul>
+      </nav>
+    </header>
     <nav id="order_menu_title">
       <ul>
         <li><a href="menu.html#carb">Carbs</a></li>
@@ -43,7 +44,8 @@
     >
       <fieldset id="details">
         <legend>Delivery Details</legend>
-        <label>Name</label>
+        <label><span class="red">*</span>Name</label>
+
         <input
           type="text"
           name="name"
@@ -54,13 +56,13 @@
         />
 
         <br /><br />
-        <label>Delivery date</label>
+        <label><span class="red">*</span>Delivery date</label>
         <input type="date" name="date" required />
         <br /><br />
-        <label>Delivery time</label>
+        <label><span class="red">*</span>Delivery time</label>
         <input type="time" name="time" required />
         <br /><br /><br />
-        <label>Address</label><br />
+        <label><span class="red">*</span>Address</label><br />
         <textarea
           name="address"
           cols="80"

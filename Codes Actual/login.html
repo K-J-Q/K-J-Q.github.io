@@ -7,18 +7,20 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li id="notbutton">
-          <img id="logo" src="images/logo.png" alt="" />
-        </li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Price & Menu</a></li>
-        <li><a href="order.html">Order Now</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li id="current"><a href="">Login/Register</a></li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <ul>
+          <li id="notbutton">
+            <img id="logo" src="images/logo.png" alt="" />
+          </li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Price & Menu</a></li>
+          <li><a href="order.html">Order Now</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li id="current"><a href="">Login/Register</a></li>
+        </ul>
+      </nav>
+    </header>
     <h1>Login</h1>
     <form
       id="login"
@@ -26,14 +28,14 @@
       method="post"
       action=" http://jkorpela.fi/cgi-bin/echo.cgi"
     >
-      <label>Email Address: </label>
+      <label><span class="red">*</span>Email Address: </label>
       <input
         type="email"
         name="email"
         placeholder="Your email"
         required
       /><br /><br />
-      <label>Password: </label>
+      <label><span class="red">*</span>Password: </label>
       <input
         type="password"
         name="password"

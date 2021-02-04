@@ -260,7 +260,6 @@ li a {
 }
 table {
   border-collapse: collapse;
-
   margin: 25px auto;
   font-size: 0.9em;
   font-family: sans-serif;
@@ -547,4 +546,7 @@ footer {
 #notbutton:hover {
   box-shadow: none;
   background-color: #cbac88;
+}
+.red {
+  color: red;
 }
