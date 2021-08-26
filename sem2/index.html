@@ -139,6 +139,7 @@
 			});
 
 			socket.on('PotEvent', function (RxData) {
+				RxData.data = 80;
 				$('pot').text(RxData.data);
 				LightStatus(RxData.data);
 				var none = 100 - RxData.data;

@@ -133,7 +133,7 @@ li a {
   display: block;
   text-align: center;
   padding: 1em;
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 #links {
   padding: 22px 0px;
@@ -249,7 +249,7 @@ li a {
 }
 #price {
   padding: 15px;
-  width: 40%;
+  width: 60%;
   margin: 10px auto;
   background-color: #ddc3d0;
   font-size: 1.25em;
