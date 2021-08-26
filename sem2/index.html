@@ -35,6 +35,7 @@
 			var noiseY;
 
 			socket.on('Web_BBBW1Event', function (RxData) {
+				RxData.data = 3;
 				$('bbbw').text(RxData.data);
 				imageLoad(RxData.data);
 				if (RxData.data == 4) {
@@ -60,6 +61,7 @@
 			});
 
 			socket.on('Web_BBBWcount', function (RxData) {
+				RxData[0].data = 78;
 				$('bbbwcount').text(RxData[0].data);
 				if (RxData[0].data > 90) {
 					document.getElementById("visit").style.background = "indianred";
@@ -77,6 +79,7 @@
 					document.getElementById("visit").style.background = "lightgray";
 					document.getElementById("crowdImage").src = "../static/images/one.png"
 				}
+				RxData[1] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,13,12,13,14,15,16,17,18,22,19,32,43,34,56,78]
 				var yValues2 = RxData[1];
 				var none = 99 - RxData[0].data;
 				if (none <= 0) {
