@@ -1,7 +1,20 @@
+<script>
+    $(function () {
+        var pathname = window.location.href.split("/").slice(-1)[0];
+        $('a').each(function () {
+            var link = $(this).attr('href');
+            if (link == pathname) {
+                console.log(link);
+                $(this).attr('class', "nav-link active");
+
+            }
+        });
+    });
+</script>
 <h1>JQ Website</h1>
 <nav class="navbar navbar-expand">
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><span class="nav-link active">Home</span></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="projects.html">Past projects</a></li>
         <li class="nav-item"><a class="nav-link" href="certificates.html">Certificates</a></li>
     </ul>
