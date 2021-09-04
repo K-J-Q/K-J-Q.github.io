@@ -15,14 +15,12 @@
 
     <script>
         $(function () {
-            var loc = window.location.href; // returns the full URL
-            var paragraph = document.getElementById("logging");
-            var text = document.createTextNode(loc.split("/").slice(-1));
-
-            paragraph.appendChild(text);
-            if (/technology/.test(loc)) {
-                $('#main').addClass('tech');
-            }
+            var fileName = window.location.href.split("/").slice(-1)[0];
+            fileName = fileName.slice(0, fileName.length - 5);
+            console.log(fileName);
+            // if (/technology/.test(fileName)) {
+            //     $('#main').addClass('tech');
+            // }
             $("#header").load("header.html");
 
         });
