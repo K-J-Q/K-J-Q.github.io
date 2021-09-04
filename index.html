@@ -16,7 +16,10 @@
     <script>
         $(function () {
             var loc = window.location.href; // returns the full URL
-            console.log(loc);
+            var paragraph = document.getElementById("logging");
+            var text = document.createTextNode(loc);
+
+            paragraph.appendChild(text);
             if (/technology/.test(loc)) {
                 $('#main').addClass('tech');
             }
@@ -31,7 +34,7 @@
 
     <div id="header"></div>
     This website showcases my past website design projects.
-
+    <p id="logging"></p>
 </body>
 
 </html>
