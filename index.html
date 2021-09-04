@@ -17,7 +17,7 @@
         $(function () {
             var loc = window.location.href; // returns the full URL
             var paragraph = document.getElementById("logging");
-            var text = document.createTextNode(loc.href.split("/").slice(-1));
+            var text = document.createTextNode(loc.split("/").slice(-1));
 
             paragraph.appendChild(text);
             if (/technology/.test(loc)) {
