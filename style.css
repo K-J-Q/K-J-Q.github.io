@@ -7,7 +7,9 @@ a.active{
     color: white !important;
     border-radius: 8px;
 }
-
+p{
+    text-align: justify;
+}
 li.active{
     font-weight: bold;
 }
@@ -31,12 +33,18 @@ img{
     bottom: 10px;
 }
 
-@media only screen and (max-width: 768px) {
-  #projects .list-group-item a{
-      position: static;
-    margin-top: 10px;
-    width: 100%;
-}
+@media only screen and (max-width: 800px) {
+    #projects .list-group-item a{
+        position: static;
+        margin-top: 10px;
+        width: 100%;
+        
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
 
 }
 
