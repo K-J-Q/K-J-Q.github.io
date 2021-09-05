@@ -16,9 +16,14 @@ img{
     margin-right: 10px;
     margin-top: 10px;
 }
+
+.badge{
+    margin-right: 10px;
+}
 .list-group-item{
     position: relative;
 }
+
 .list-group-item a{
     position: absolute;
     right: 10px;
