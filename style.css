@@ -20,12 +20,30 @@ img{
 .badge{
     margin-right: 10px;
 }
-.list-group-item{
+
+#projects .list-group-item{
     position: relative;
 }
 
-.list-group-item a{
+#projects .list-group-item a{
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  #projects .list-group-item a{
+      position: static;
+    margin-top: 10px;
+    width: 100%;
+}
+
+}
+
+#filters label{
+    margin: 10px;
+    margin-right: 0px;
+    font-weight: bold;
+    font-size: 0.75em;
+    padding: .35em .65em;
 }

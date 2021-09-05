@@ -16,19 +16,31 @@
     <script>
         $(function () {
             $("#header").load("header.html");
+            $('[tags~="schoolProj"]>h4').after("<span class='badge bg-warning'>School Project</span>");
+            $('[tags~="personalProj"]>h4').after("<span class='badge bg-success'>Personal Project</span>");
 
-            $('[tags~="schoolProj"]>h4').after("<span class='badge schoolProj bg-warning'>School Project</span>");
-            $('[tags~="personalProj"]>h4').after("<span class='badge schoolProj bg-success'>Personal Project</span>");
+            $("#filters :checkbox").click(function () {
+                $(this).css('opacity', 0.6);
+                $("#projects .list-group-item:not(.active)").hide();
+                $("#filters :checkbox:checked").each(function () {
+                    $('[tags~=' + $(this).val() + ']').show();
+                });
+            });
 
-            // $('.schoolProj').text("School Project").addClass("bg-warning");
-            // $('.personalProj').text("Personal Project").addClass("bg-success");
         });
     </script>
 </head>
 
 <body>
     <div id="header"></div>
-    <ul class="list-group">
+    <div id="filters">
+        <input type="checkbox" value="personalProj" id="filterPersonal" class="btn-check" checked />
+        <label for="filterPersonal" class='badge bg-success'>Personal Project</label>
+
+        <input type="checkbox" value="schoolProj" id="filterSchool" class="btn-check" checked />
+        <label for="filterSchool" class='badge bg-warning'>School Project</label>
+    </div>
+    <ul id="projects" class="list-group">
         <li class="list-group-item active">2021</li>
         <li class="list-group-item" tags="schoolProj">
             <h4>LibraLink</h4>
