@@ -2,8 +2,12 @@ body{
     margin: 10px;
 }
 
-.active{
+a.active{
     background-color: rgb(0, 132, 255);
     color: white !important;
     border-radius: 8px;
+}
+
+li.active{
+    font-weight: bold;
 }
