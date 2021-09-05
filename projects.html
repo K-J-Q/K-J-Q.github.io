@@ -16,35 +16,33 @@
     <script>
         $(function () {
             $("#header").load("header.html");
-            $('.schoolProj').text("School Project").addClass("bg-warning");
-            $('.personalProj').text("Personal Project").addClass("bg-success");
+
+            $('[tags="schoolProj"]>h4').after("<span class='badge schoolProj bg-warning'>School Project</span><br>");
+            $('[tags="personalProj"]>h4').after("<span class='badge schoolProj bg-success'>Personal Project</span><br>");
+            // $('.schoolProj').text("School Project").addClass("bg-warning");
+            // $('.personalProj').text("Personal Project").addClass("bg-success");
         });
     </script>
 </head>
 
 <body>
     <div id="header"></div>
-
     <ul class="list-group">
         <li class="list-group-item active">2021</li>
-        <li class="list-group-item">
+        <li class="list-group-item" tags="schoolProj">
             <h4>LibraLink</h4>
             <p>
             </p>
-
-            <span class="badge schoolProj"></span>
             <a class="btn btn-outline-success" role="button" href="projects/sem2/index.html">View</a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item" tags="personalProj">
             <h4>E-Ink display</h4>
             <p></p>
-            <span class="badge personalProj"></span>
             <a class="btn btn-outline-success" role="button" href="">View</a>
         </li>
         <li class="list-group-item active">2020</li>
-        <li class="list-group-item">
+        <li class="list-group-item" tags="personalProj">
             <h4>IOT weather station</h4>
-            <span class="badge personalProj"></span><br>
             <img src="projects/images/weatherstation.JPG" class="rounded float-start"
                 alt="image of IOT weather station">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis quod reiciendis neque, cupiditate
@@ -52,30 +50,27 @@
                 obcaecati exercitationem nobis adipisci repellendus!</p>
             <a class="btn btn-outline-success" role="button" href="projects/">View</a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item" tags="personalProj">
             <h4>Focus assist</h4>
             <p>
 
             </p>
-            <span class="badge personalProj"></span>
             <a class="btn btn-outline-success" role="button" href="projects/">View</a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item" tags="schoolProj">
             <h4>Food stall website</h4>
 
             <p>
                 This website was created from scratch. The stall assigned to me was economical
                 rice.
             </p>
-            <span class="badge schoolProj"></span>
             <a class="btn btn-outline-success" role="button" href="projects/sem1/index.html">View</a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item" tags="schoolProj">
             <h4>Smart carpark</h4>
             <p>
 
             </p>
-            <span class="badge schoolProj"></span>
             <a class="btn btn-outline-success" role="button" href="projects/">View</a>
         </li>
 
