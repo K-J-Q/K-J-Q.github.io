@@ -20,6 +20,7 @@
             $('[tags~="indiv"]>h4').after("<span class='badge bg-secondary'>Individual</span>");
             $('[tags~="schoolProj"]>h4').after("<span class='badge bg-warning'>School Project</span>");
             $('[tags~="personalProj"]>h4').after("<span class='badge bg-success'>Personal Project</span>");
+            $('[tags~="ongoing"]>h4').append(" <span class='badge bg-primary'>Ongoing</span>");
 
 
             $("#filters :checkbox").click(function () {
@@ -51,15 +52,31 @@
     </div>
     <ul id="projects" class="list-group">
         <li class="list-group-item active">2021</li>
-        <li class="list-group-item" tags="personalProj indiv">
+        <!-- <li class="list-group-item" tags="">
+            <h4>Name</h4>
+            <br>
+            <img src="" alt="" class="rounded float-start">
+            <p></p>
+            <a class="btn btn-outline-success" role="button" href="">View</a>
+        </li> -->
+        <li class="list-group-item" tags="personalProj group ongoing">
+            <h4>Engineering Innovation Challenge</h4>
+            <br>
+            <img src="" alt="" class="rounded float-start">
+            <p></p>
+            <a class="btn btn-outline-success" role="button" href="">View</a>
+        </li>
+        <li class="list-group-item" tags="personalProj indiv ongoing">
             <h4>E-Ink display</h4>
             <br>
+            <img src="" alt="" class="rounded float-start">
             <p></p>
             <a class="btn btn-outline-success" role="button" href="">View</a>
         </li>
         <li class="list-group-item" tags="schoolProj group">
             <h4>LibraLink</h4>
             <br>
+            <img src="" alt="" class="rounded float-start">
             <p>
             </p>
             <a class="btn btn-outline-success" role="button" href="projects/sem2/index.html">View</a>
@@ -68,8 +85,13 @@
         <li class="list-group-item" tags="schoolProj group">
             <h4>Hand Hygienics</h4>
             <br>
-            <p></p>
-            <a class="btn btn-outline-success" role="button" href="">View</a>
+            <img src="projects/images/handHygenics.jfif" alt="" class="rounded float-start">
+            <p>
+                This project won second place in the m5-Stack industry <a
+                    href="https://shop.m5stack.com/blogs/news/m5stack-and-nyp-collaborates-on-covid-19-projects">competition</a>.
+            </p>
+            <a class="btn btn-outline-success" role="button"
+                href="https://www.hackster.io/e1-team-2/hand-hygienics-5e04a9">View</a>
         </li>
         <li class="list-group-item active">2020</li>
         <li class="list-group-item" tags="personalProj indiv">
@@ -85,6 +107,7 @@
         <li class="list-group-item" tags="personalProj indiv">
             <h4>Focus assist</h4>
             <br>
+            <img src="" alt="" class="rounded float-start">
             <p>
 
             </p>
@@ -93,6 +116,7 @@
         <li class="list-group-item" tags="schoolProj indiv">
             <h4>Food stall website</h4>
             <br>
+            <img src="projects/images/webDesign.png" class="rounded float-start" alt="">
             <p>
                 This website was created from scratch. The stall assigned to me was economical
                 rice.
@@ -102,6 +126,7 @@
         <li class="list-group-item" tags="schoolProj indiv">
             <h4>Smart carpark</h4>
             <br>
+            <img src="projects/images/smartCarPark.jpg" alt="" class="rounded float-start">
             <p>
 
             </p>
