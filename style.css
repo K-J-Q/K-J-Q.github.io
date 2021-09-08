@@ -55,3 +55,8 @@ img{
     font-size: 0.75em;
     padding: .35em .65em;
 }
+
+.card{
+    margin-left: 10px;
+    margin-right: 10px;
+}

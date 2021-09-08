@@ -4,12 +4,12 @@
 <head>
 	<title>Connected Systems Group 1 </title>
 	<link rel="icon" href="../static/images/logo.png">
-	<img id="barchart1" src="{{url_for('static', filename='images/barGraph_edited_1.jpg')}}" style="display: none;">
-	<img id="barchart2" src="{{url_for('static', filename='images/barGraph_edited_2.jpg')}}" style="display: none;">
-	<img id="barchart3" src="{{url_for('static', filename='images/barGraph_edited_3.jpg')}}" style="display: none;">
-	<img id="barchart4" src="{{url_for('static', filename='images/barGraph_edited_4.jpg')}}" style="display: none;">
-	<img id="lightbulbon" src="{{url_for('static', filename='images/lights_on.png')}}" style="display: none;">
-	<img id="lightbulboff" src="{{url_for('static', filename='images/lights_off.png')}}" style="display: none;">
+	<img id="barchart1" src="static/images/barGraph_edited_1.jpg" style="display: none;">
+	<img id="barchart2" src="static/images/barGraph_edited_2.jpg" style="display: none;">
+	<img id="barchart3" src="static/images/barGraph_edited_3.jpg" style="display: none;">
+	<img id="barchart4" src="static/images/barGraph_edited_4.jpg" style="display: none;">
+	<img id="lightbulbon" src="static/images/lights_on.png" style="display: none;">
+	<img id="lightbulboff" src="static/images/lights_off.png" style="display: none;">
 	<link rel="stylesheet" href="../static/others/font-awesome-4.7.0/css/font-awesome.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -79,7 +79,7 @@
 					document.getElementById("visit").style.background = "lightgray";
 					document.getElementById("crowdImage").src = "../static/images/one.png"
 				}
-				RxData[1] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,13,12,13,14,15,16,17,18,22,19,32,43,34,56,78]
+				RxData[1] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 13, 12, 13, 14, 15, 16, 17, 18, 22, 19, 32, 43, 34, 56, 78]
 				var yValues2 = RxData[1];
 				var none = 99 - RxData[0].data;
 				if (none <= 0) {

@@ -15,14 +15,12 @@
 
     <script>
         $(function () {
-            $("#header").load("header.html");
+            $("#header").load("header.html");    
             $('[tags~="group"]>h4').after("<span class='badge bg-primary'>Groupwork</span>");
             $('[tags~="indiv"]>h4').after("<span class='badge bg-secondary'>Individual</span>");
             $('[tags~="schoolProj"]>h4').after("<span class='badge bg-warning'>School Project</span>");
             $('[tags~="personalProj"]>h4').after("<span class='badge bg-success'>Personal Project</span>");
             $('[tags~="ongoing"]>h4').append(" <span class='badge bg-primary'>Ongoing</span>");
-
-
             $("#filters :checkbox").click(function () {
                 if ($('[for=' + $(this)[0].id + ']').css('opacity') == 1)
                     $('[for=' + $(this)[0].id + ']').css('opacity', 0.6);
@@ -34,7 +32,6 @@
                     $('[tags~=' + $(this).val() + ']').show();
                 });
             });
-
         });
     </script>
 </head>
