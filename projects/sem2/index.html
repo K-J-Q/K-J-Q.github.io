@@ -28,17 +28,35 @@
 			setInterval(randomData, 1000);
 		});
 
-		var noisePoint = document.getElementById("dot");
+
 		var xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 		var xValues2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 		var yValues1 = [0];
+		countData = [0, [0]]
 		var noiseX;
 		var noiseY;
+		var lightCanvas = document.getElementById("r4c2");
+		var lightContext = lightCanvas.getContext("2d");
+		var lightBulbOnImage = document.getElementById("lightbulbon");
+		var lightBulbOffImage = document.getElementById("lightbulboff");
+		lightContext.drawImage(lightBulbOffImage, 75, 50);
+
+
 
 		function randomData() {
+			var noisePoint = document.getElementById("dot");
+
+			// random data
 			noiseData = Math.floor(Math.random() * 4) + 1;
-			countData = Math.floor(Math.random() * 100);
-			
+			count = Math.floor(Math.random() * 100);
+			pot = Math.floor(Math.random() * 101);
+
+			countData[0] = count;
+			if (countData[1].length >= 30) {
+				countData[1].shift()
+			}
+			countData[1].push(count);
+
 			$('bbbw').text(noiseData);
 			imageLoad(noiseData);
 			if (noiseData == 4) {
@@ -46,6 +64,8 @@
 				document.getElementById("noiseImage").src = "https://www.animatedimages.org/data/media/1103/animated-congratulation-image-0067.gif";
 				noiseX = (Math.random() * 370) + 90;
 				noiseY = (Math.random() * 230) + 30;
+
+
 				noisePoint.style.left = noiseX + "px";
 				noisePoint.style.top = noiseY + "px";
 			}
@@ -62,16 +82,16 @@
 				document.getElementById("noiseImage").src = "";
 			}
 
-			$('bbbwcount').text(countData);
-			if (countData > 90) {
+			$('bbbwcount').text(countData[0]);
+			if (countData[0] > 90) {
 				document.getElementById("visit").style.background = "indianred";
 				document.getElementById("crowdImage").src = "static/images/alot.png"
 			}
-			else if (countData >= 50) {
+			else if (countData[0] >= 50) {
 				document.getElementById("visit").style.background = "lemonchiffon";
 				document.getElementById("crowdImage").src = "static/images/med.png"
 			}
-			else if (countData >= 20) {
+			else if (countData[0] >= 20) {
 				document.getElementById("visit").style.background = "lightgray";
 				document.getElementById("crowdImage").src = "static/images/barely.png"
 			}
@@ -79,12 +99,13 @@
 				document.getElementById("visit").style.background = "lightgray";
 				document.getElementById("crowdImage").src = "static/images/one.png"
 			}
-			RxData[1] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 13, 12, 13, 14, 15, 16, 17, 18, 22, 19, 32, 43, 34, 56, 78]
-			var yValues2 = RxData[1];
-			var none = 99 - countData;
+
+			var yValues2 = countData[1];
+			var none = 99 - countData[0];
 			if (none <= 0) {
 				none = 0;
 			}
+
 			var ctx = document.getElementById('visitorsChart').getContext('2d');
 			var chart = new Chart(ctx, {
 				// The type of chart we want to create
@@ -96,7 +117,7 @@
 						backgroundColor: [
 							"#00ACFF", "#00000000"
 						],
-						data: [countData, none],
+						data: [countData[0], none],
 						borderColor: ["#000000", "#00000000"]
 					}]
 				},
@@ -136,7 +157,40 @@
 				},
 
 			});
+
+			$('pot').text(pot);
+			LightStatus(pot);
+			var none = 100 - pot;
+			if (none <= 0) {
+				none = 0;
+			}
+			var ctx = document.getElementById('brightnessChart').getContext('2d');
+			var chart = new Chart(ctx, {
+				// The type of chart we want to create
+				type: 'doughnut',
+				// The data for our dataset
+				data: {
+					datasets: [{
+						label: "Vibration Intensity",
+						backgroundColor: [
+							"#00ACFF", "#00000000"
+						],
+						data: [pot, none],
+						borderColor: ["#000000", "#00000000"]
+					}]
+				},
+
+				// Configuration options go here
+				options: {
+					animation: false,
+					legend: {
+						display: false,
+					},
+
+				}
+			});
 		}
+		// Functions
 		function imageLoad(x) {
 			var y = x * 58
 			var c = document.getElementById("myCanvas");
@@ -156,46 +210,25 @@
 			ctx.clearRect(10, 10, 300, 30);
 			ctx.drawImage(barImage, 10, 10, y, 30);
 		}
+		function LightStatus(lighting) {
+			var change5 = document.getElementById("toggle5");
+			var percentage = document.getElementById("percent");
+			lightContext.globalAlpha = 1.0;
+			lightContext.clearRect(0, 0, 200, 155);
+			if (lighting > 0) {
+
+				lightContext.drawImage(lightBulbOnImage, 50, 35);
+			}
+			else {
+				lightContext.drawImage(lightBulbOffImage, 75, 50);
+			}
+		}
 	</script>
 	<!-- <script type='text/javascript'>
 		$(document).ready(function () {
-			socket.on('Web_BBBWcount', function (RxData) {
-				
-			});
 
 			socket.on('PotEvent', function (RxData) {
-				RxData.data = 80;
-				$('pot').text(RxData.data);
-				LightStatus(RxData.data);
-				var none = 100 - RxData.data;
-				if (none <= 0) {
-					none = 0;
-				}
-				var ctx = document.getElementById('brightnessChart').getContext('2d');
-				var chart = new Chart(ctx, {
-					// The type of chart we want to create
-					type: 'doughnut',
-					// The data for our dataset
-					data: {
-						datasets: [{
-							label: "Vibration Intensity",
-							backgroundColor: [
-								"#00ACFF", "#00000000"
-							],
-							data: [RxData.data, none],
-							borderColor: ["#000000", "#00000000"]
-						}]
-					},
-
-					// Configuration options go here
-					options: {
-						animation: false,
-						legend: {
-							display: false,
-						},
-
-					}
-				});
+				
 			});
 
 
@@ -295,26 +328,10 @@
 
 			});
 
-			var lightCanvas = document.getElementById("r4c2");
-			var lightContext = lightCanvas.getContext("2d");
-			var lightBulbOnImage = document.getElementById("lightbulbon");
-			var lightBulbOffImage = document.getElementById("lightbulboff");
-			lightContext.drawImage(lightBulbOffImage, 75, 50);
+			
 
 
-			function LightStatus(lighting) {
-				var change5 = document.getElementById("toggle5");
-				var percentage = document.getElementById("percent");
-				lightContext.globalAlpha = 1.0;
-				lightContext.clearRect(0, 0, 200, 155);
-				if (lighting > 0) {
-
-					lightContext.drawImage(lightBulbOnImage, 50, 35);
-				}
-				else {
-					lightContext.drawImage(lightBulbOffImage, 75, 50);
-				}
-			}
+			
 
 			$('SubmitButton').click(function () {
 				socket.emit('changeThreshold', document.getElementById("threshold").value);
