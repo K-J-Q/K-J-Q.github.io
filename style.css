@@ -48,6 +48,10 @@ img{
         width: 100%;
         height: auto;
     }
+    #job{
+        width: 100%;
+        margin-left: 20px;
+    }
 
 }
 
