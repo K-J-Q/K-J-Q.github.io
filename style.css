@@ -29,7 +29,7 @@ img{
     position: relative;
 }
 
-#projects .list-group-item a.btn{
+#projects .list-group-item a .btn{
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -37,22 +37,19 @@ img{
 
 
 @media only screen and (max-width: 800px) {
+    body{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
     #projects .list-group-item a{
-        position: static;
-        margin-top: 10px;
         width: 100%;
+        margin-top: 10px;
         
     }
-
     img{
         width: 100%;
         height: auto;
     }
-    #job{
-        width: 100%;
-        margin-left: 20px;
-    }
-
 }
 
 #filters label{
@@ -73,8 +70,4 @@ img{
     border-radius: 10px;
     margin: 10px;
     padding: 20px;
-}
-
-#job{
-    width: 60%;
 }
