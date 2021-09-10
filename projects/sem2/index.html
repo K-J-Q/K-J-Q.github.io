@@ -211,26 +211,17 @@
 			ctx.drawImage(barImage, 10, 10, y, 30);
 		}
 		function LightStatus(lighting) {
-			var change5 = document.getElementById("toggle5");
-			var percentage = document.getElementById("percent");
-			lightContext.globalAlpha = 1.0;
-			lightContext.clearRect(0, 0, 200, 155);
-			if (lighting > 0) {
+			// if (lighting > 0) {
 
-				lightContext.drawImage(lightBulbOnImage, 50, 35);
-			}
-			else {
-				lightContext.drawImage(lightBulbOffImage, 75, 50);
-			}
+			// 	lightContext.drawImage(lightBulbOnImage, 50, 35);
+			// }
+			// else {
+			// 	lightContext.drawImage(lightBulbOffImage, 75, 50);
+			// }
 		}
 	</script>
 	<!-- <script type='text/javascript'>
 		$(document).ready(function () {
-
-			socket.on('PotEvent', function (RxData) {
-				
-			});
-
 
 			socket.on('VibData', function (RxData) {
 
