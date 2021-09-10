@@ -70,3 +70,13 @@ img{
     margin: 10px;
     padding: 20px;
 }
+
+footer{
+    background-color:#cfe2ff;
+    padding: 10px;
+    color: rgb(8, 66, 152);
+    font-weight: bold;
+    text-align: center;
+    margin: -12px;
+    margin-top: 10px;
+}
