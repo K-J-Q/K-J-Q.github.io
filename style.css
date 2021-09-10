@@ -67,10 +67,6 @@ img{
     margin-left: 10px;
     margin-right: 10px;
 }
-
-#skills > .row{
-    margin: 10px;
-}
 #skills > .row > div{
     border: lightgray 1px solid;
     border-radius: 10px;
@@ -80,5 +76,4 @@ img{
 
 #job{
     width: 60%;
-    margin-left: 20px;
 }
