@@ -29,7 +29,7 @@ img{
     position: relative;
 }
 
-#projects .list-group-item a .btn{
+#projects .list-group-item .btn{
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -41,10 +41,11 @@ img{
         margin-left: 10px;
         margin-right: 10px;
     }
-    #projects .list-group-item a{
+    #projects .list-group-item .btn{
+        position: static;
         width: 100%;
+        margin: auto;
         margin-top: 10px;
-        
     }
     img{
         width: 100%;
@@ -70,4 +71,8 @@ img{
     border-radius: 10px;
     margin: 10px;
     padding: 20px;
+}
+
+h2{
+    text-align: center;
 }
