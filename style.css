@@ -80,3 +80,7 @@ h2{
 .company{
     color:rgb(50, 137, 218);
 }
+.col{
+    text-align: center;
+    font-weight: bold;
+}
