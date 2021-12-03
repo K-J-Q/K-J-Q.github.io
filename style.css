@@ -66,11 +66,12 @@ img{
     margin-right: 10px;
 }
 
-#skills > .row > div{
+#skills > div{
     border: lightgray 1px solid;
     border-radius: 10px;
     margin: 10px;
     padding: 20px;
+    min-width: 400px;
 }
 
 h2{
