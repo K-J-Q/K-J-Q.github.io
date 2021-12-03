@@ -73,6 +73,10 @@ img{
     padding: 20px;
     min-width: 400px;
 }
+#certs > .row > div{
+    font-weight: bold;
+    text-align: center;
+}
 
 h2{
     text-align: center;
