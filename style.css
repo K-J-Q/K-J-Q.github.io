@@ -15,7 +15,8 @@ p{
 li.active{
     font-weight: bold;
 }
-img{
+
+.col-sm > img, li > img{
     height: 200px;
     margin-right: 10px;
     margin-top: 10px;
@@ -35,7 +36,15 @@ img{
     bottom: 10px;
 }
 
-
+@media only screen and (max-width: 1200px) {
+    body{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .col-sm > img{
+        min-width: 40%;
+    }
+}
 @media only screen and (max-width: 800px) {
     body{
         margin-left: 10px;
@@ -47,12 +56,12 @@ img{
         margin: auto;
         margin-top: 10px;
     }
-    img{
-        width: 100%;
-        height: auto;
+    li > img, .col-sm > img{
+      width: max-content;
+      width: 100%;
+      height: auto;
     }
 }
-
 #filters label{
     margin: 10px;
     margin-right: 0px;
