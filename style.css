@@ -53,9 +53,9 @@ li.active{
         margin-right: 10px;
     }
     .navbar-nav{
-  display: block;
-  width: 100%;
-}
+      display: block;
+      width: 100%;
+    }
     #projects .list-group-item .btn{
         position: static;
         width: 100%;
