@@ -9,6 +9,7 @@ a.active{
     color: white !important;
     border-radius: 8px;
 }
+
 p{
     text-align: justify;
 }
@@ -45,11 +46,16 @@ li.active{
         min-width: 40%;
     }
 }
+
 @media only screen and (max-width: 800px) {
     body{
         margin-left: 10px;
         margin-right: 10px;
     }
+    .navbar-nav{
+  display: block;
+  width: 100%;
+}
     #projects .list-group-item .btn{
         position: static;
         width: 100%;
