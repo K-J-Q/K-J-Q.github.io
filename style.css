@@ -31,10 +31,15 @@ li.active{
     position: relative;
 }
 
-#projects .list-group-item .btn{
+#projects .list-group-item .view{
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+.video{
+  position: absolute;
+  right: 100px;
+  bottom: 10px;
 }
 #smallProfile{
   width: 300px;
