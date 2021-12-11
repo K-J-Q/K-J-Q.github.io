@@ -104,6 +104,11 @@ h2{
   margin-top: 20px;
 }
 
+#skills > .col-sm > img{
+  height: 150px;
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 1200px) {
     body{
         margin-left: 10px;
@@ -130,7 +135,7 @@ h2{
         margin: auto;
         margin-top: 10px;
     }
-    li > img, .col-sm > img{
+    li > img, .col-sm > img, #skills > .col-sm > img{
       width: max-content;
       width: 100%;
       height: auto;
@@ -151,6 +156,8 @@ h2{
       text-align: center;
     }
 }
+
+
 
 /* ignore these timeline codes */
 .timeline {
