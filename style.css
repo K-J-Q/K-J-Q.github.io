@@ -22,7 +22,9 @@ li.active{
     margin-right: 10px;
     margin-top: 10px;
 }
-
+.portrait > img{
+  height: 400px;
+}
 .badge{
     margin-right: 10px;
 }
