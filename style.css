@@ -76,7 +76,9 @@ li.active{
     min-width: 300px;
     width: fit-content;
 }
-#certs > .row > div{
+#certs > .row > a{
+  text-decoration: initial;
+  color: black;
     font-weight: bold;
     text-align: center;
 }
