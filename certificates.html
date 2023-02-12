@@ -8,9 +8,40 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-C3BVW8M12B');
     </script>
+    <body>
+        <div class="container" id="certs">
+            <h2>Additional courses</h2>
+            <div class="row">
+            </div>
+        </div>
+    </body>
+    
+    <script>
+        const directory = './certs/';
+        const imageTypes = ['.png', '.jpg'];
+
+        fetch(directory)
+            .then(response => response.json())
+            .then(data => {
+                const imageFiles = data.filter(file => {
+                    const fileExtension = file.name.substr(file.name.lastIndexOf('.'));
+                    return imageTypes.includes(fileExtension);
+                });
+
+                const container = document.querySelector('#certs .row');
+
+                imageFiles.forEach(imageFile => {
+                    const fileName = imageFile.name.split('.')[0];
+                    const imageLink = `<a class="col-sm" data-lightbox="Additional courses" href="${directory}${imageFile.name}"><img src="${directory}${imageFile.name}" alt=""><br>${fileName}</a>`;
+                    container.innerHTML += imageLink;
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JQ Website</title>
@@ -43,6 +74,7 @@
             <a class="col-sm" data-lightbox="Additional courses" href="certs/Astronomy Exploring Time and Space.jpg"><img
                     src="certs/Astronomy Exploring Time and Space.jpg" alt=""><br>Astronomy
             </a>
+
             <a class="col-sm" class="col-sm" data-lightbox="Additional courses" href="certs/Flutter (1).png"><img
                     src="certs/Flutter (1).png" alt=""><br>Mobile App
                 Development</a>
