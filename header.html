@@ -12,6 +12,7 @@
         });
     });
 </script>
+
 <h1 class="text-center">💻 Kwa Jian Quan 💻</h1>
 
 <nav class="navbar navbar-expand">
@@ -24,4 +25,20 @@
         <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
     </ul>
 </nav>
+<text id="headerLink"></text>
+<style>
+    #headerLink {
+        display: none;
+    }
+    @media print {
+        #headerLink {
+            display: block;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+</style>
+<script>
+    document.getElementById("headerLink").innerHTML = "Website location: " + window.location.href;
+</script>
 <hr size="5">
