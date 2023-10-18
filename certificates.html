@@ -21,6 +21,59 @@
         <script src="lightbox.js"></script>
         <script src="common.js"></script>
         <script>
+                const additionalCoursesPaths = [
+                        'certs/Data Analytics specialisation.png', 
+                        'certs/IT Automation specialisation.jpg', 
+                        'certs/Cybersecurity specialisation.jpg'
+                ];
+
+                const moreAdditionalCoursesPaths = [
+                        'certs/SYFC 1.jpg',
+                        'certs/SYFC 2.jpg',
+                        'certs/SYFC 3.jpg',
+                        'certs/AI.png',
+                        'certs/Astronomy Exploring Time and Space.jpg',
+                        'certs/Machine Learning.png',
+                        'certs/Deep learning.png',
+                        'certs/Flutter.png',
+                        'certs/Inventor.png',
+                        'certs/Fusion 360.png',
+                        'certs/Introduction to HTML.jpg',
+                        'certs/Introduction to CSS3.jpg',
+                        'certs/Interactivity with JavaScript.jpg'
+                ];
+
+                const polytechnicPaths = [
+                                'certs/Poly/Diploma cert.jpeg',
+                                'certs/Poly/Diploma Plus.jpeg',
+                                'certs/Poly/CCA.jpeg',
+                                'certs/Poly/GOLD.jpeg',
+                                'certs/Poly/IOE.jpeg',
+                                'certs/Poly/Project Award.jpeg',
+                                'certs/Poly/Tops.png',
+                                'certs/Poly/Director Lists.png',
+                                'certs/Poly/Peer tutoring.jpg',
+                                'certs/Poly/Edusave Academic 2021.JPG',
+                                'certs/Poly/DSO.JPG',
+                                'certs/Poly/EIC.png'
+                        ];
+
+                const secondaryPaths = [
+                        'certs/Sec/Robotics 2016 (1).JPG',
+                        'certs/Sec/Robotics 2016 (2).JPG',
+                        'certs/Sec/Robotics 2017.JPG',
+                        'certs/Sec/Robotics 2018.JPG',
+                        'certs/Sec/Robotics 2019.JPG',
+                        'certs/Sec/Robotics Appointment.JPG',
+                        'certs/Sec/Robotics Appreciation.JPG',
+                        'certs/Sec/Robotics Service.JPG',
+                        'certs/Sec/Maker Faire.JPG',
+                        'certs/Sec/Innovative Award.JPG',
+                        'certs/Sec/Edusave Academic 2018.JPG',
+                        'certs/Sec/Edusave GPA 2018.JPG',
+                        'certs/Sec/Conduct.JPG'
+                ];
+
                 function showMore(elementId) {
                         var element = document.getElementById(elementId);
                         if (element.style.display === "none") {
@@ -31,6 +84,15 @@
                                 document.getElementById("moreButton").innerHTML = "See more";
                         }
                 }
+
+                function generateImageHTML(paths) {
+                        paths.forEach(path => {
+                                const imageName = path.split('/').pop().split('.')[0];
+                                const linkText = imageName.split(' ').join('%20');
+                                const html = `<a class="col-sm" data-lightbox="Additional courses" href="${path}"><img src="${path}" alt=""><br>${imageName}</a>`;
+                                document.write(html);
+                        });
+                }
         </script>
 </head>
 
@@ -38,59 +100,23 @@
         <div class="container" id="certs">
                 <h2>Additional courses</h2>
                 <div class="row">
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/Data Analytics specialisation.png"><img src="certs/Data Analytics specialisation.png" alt=""><br>Data Analytics specialisation</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/IT Automation specialisation.jpg"><img src="certs/IT Automation specialisation.jpg" alt=""><br>IT Automation specialisation</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/Cybersecurity specialisation.jpg"><img src="certs/Cybersecurity specialisation.jpg" alt=""><br>Cybersecurity specialisation</a>
+                        <script>generateImageHTML(additionalCoursesPaths);</script>
                 </div>
                 <div class="d-flex justify-content-center p-4">
                         <button class="btn btn-primary" onclick="showMore('moreAdditionalCourses')" id="moreButton">See more</button>
                 </div>
-                <div class="row" id="moreAdditionalCourses" style="display: none;">
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/SYFC 1.jpg"><img src="certs/SYFC 1.jpg" alt=""><br>SYFC Phase 1</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/SYFC 2.jpg"><img src="certs/SYFC 2.jpg" alt=""><br>SYFC Phase 2</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/SYFC 3.jpg"><img src="certs/SYFC 3.jpg" alt=""><br>SYFC First Solo</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/AI.png"><img src="certs/AI.png" alt=""><br>AI For Everyone</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/Astronomy Exploring Time and Space.jpg"><img src="certs/Astronomy Exploring Time and Space.jpg" alt=""><br>Astronomy</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/Machine Learning.png"><img src="certs/Machine Learning.png" alt=""><br>Machine Learning</a>
-                        <a class="col-sm" data-lightbox="Additional courses" href="certs/Deep learning.png"><img src="certs/Deep learning.png" alt=""><br>Deep Learning</a>
-                        <a class="col-sm" class="col-sm" data-lightbox="Additional courses" href="certs/Flutter.png"><img src="certs/Flutter.png" alt=""><br>Mobile App Development</a>
-                        <a class="col-sm" class="col-sm" data-lightbox="Additional courses" href="certs/Inventor.png"><img src="certs/Inventor.png" alt=""><br>Autodesk Inventor</a>
-                        <a class="col-sm" class="col-sm" data-lightbox="Additional courses" href="certs/Fusion 360.png"><img src="certs/Fusion 360.png" alt=""><br>Fusion 360</a>
-                        <a class="col-sm" class="col-sm" data-lightbox="Additional courses" href="certs/Introduction to HTML.jpg"><img src="certs/Introduction to HTML.jpg" alt=""><br>Web Development (HTML) </a>
-                        <a class="col-sm" class="col-sm" data-lightbox="Additional courses" href="certs/Introduction to CSS3.jpg"><img src="certs/Introduction to CSS3.jpg" alt=""><br>Web Development (CSS) </a>
-                        <a class="col-sm" class="col-sm" data-lightbox="Additional courses" href="certs/Interactivity with JavaScript.jpg"><img src="certs/Interactivity with JavaScript.jpg" alt=""><br>Web Development (JavaScript) </a>
+                <div class="row" id="moreAdditionalCourses" style="display: none;"> 
+                        <script>generateImageHTML(moreAdditionalCoursesPaths);</script>
+                        
                 </div>
                 <h2>Polytechnic</h2>
                 <div class="row">
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/Diploma cert.jpeg"><img src="certs/Poly/Diploma cert.jpeg" alt=""><br> Diploma with Merit</a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/Diploma Plus.jpeg"><img src="certs/Poly/Diploma Plus.jpeg" alt=""><br> Diploma Plus</a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/CCA.jpeg"><img src="certs/Poly/CCA.jpeg" alt=""><br> Calyon Creativity Award</a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/GOLD.jpeg"><img src="certs/Poly/GOLD.jpeg" alt=""><br> SICK GOLD medal for academic performance</a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/IOE.jpeg"><img src="certs/Poly/IOE.jpeg" alt=""><br> Institution of Engineers GOLD </a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/Project Award.jpeg"><img src="certs/Poly/Project Award.jpeg" alt=""><br> Outstanding Project</a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/Tops.png"><img src="certs/Poly/Tops.png" alt=""><br>Top in course (3 semesters)</a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/Director Lists.png"><img src="certs/Poly/Director Lists.png" alt=""><br>Director's Lists </a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/Peer tutoring.jpg"><img src="certs/Poly/Peer tutoring.jpg" alt=""><br>Peer Tutoring </a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/Edusave Academic 2021.JPG"><img src="certs/Poly/Edusave Academic 2021.JPG" alt=""><br>Edusave Academic </a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/DSO.JPG"><img src="certs/Poly/DSO.JPG" alt=""><br>DSO Diploma Scholarship </a>
-                        <a class="col-sm portrait" data-lightbox="Polytechnic" href="certs/Poly/EIC.png"><img src="certs/Poly/EIC.png" alt=""><br>Engineering Innovation Challenge 2021</a>
+                        <script>generateImageHTML(polytechnicPaths);</script>
                 </div>
                 <hr>
                 <h2>Secondary</h2>
                 <div class="row">
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics 2016 (1).JPG"><img src="certs/Sec/Robotics 2016 (1).JPG" alt=""><br> Robotics 2016 Competition </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics 2016 (2).JPG"><img src="certs/Sec/Robotics 2016 (2).JPG" alt=""><br>Robotics 2016 Competition </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics 2017.JPG"><img src="certs/Sec/Robotics 2017.JPG" alt=""><br>Robotics 2017 Competition </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics 2018.JPG"><img src="certs/Sec/Robotics 2018.JPG" alt=""><br>Robotics 2018 Competition </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics 2019.JPG"><img src="certs/Sec/Robotics 2019.JPG" alt=""><br>Robotics 2019 Competition </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics Appointment.JPG"><img src="certs/Sec/Robotics Appointment.JPG" alt=""><br> Robotics VP Appointment </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics Appreciation.JPG"><img src="certs/Sec/Robotics Appreciation.JPG" alt=""><br> Robotics VP Appreciation </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Robotics Service.JPG"><img src="certs/Sec/Robotics Service.JPG" alt=""><br> Robotics VP Service </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Maker Faire.JPG"><img src="certs/Sec/Maker Faire.JPG" alt=""><br>Maker's Faire </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Innovative Award.JPG"><img src="certs/Sec/Innovative Award.JPG" alt=""><br> Student Innovation </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Edusave Academic 2018.JPG"><img src="certs/Sec/Edusave Academic 2018.JPG" alt=""><br> Edusave Academic 2018 </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Edusave GPA 2018.JPG"><img src="certs/Sec/Edusave GPA 2018.JPG" alt=""><br> Edusave Good Progress 2018 </a>
-                        <a class="col-sm portrait" data-lightbox="Secondary school" href="certs/Sec/Conduct.JPG"><img src="certs/Sec/Conduct.JPG" alt=""><br> Excellence in conduct </a>
+                        <script>generateImageHTML(secondaryPaths);</script>
                 </div>
         </div>
 </body>
