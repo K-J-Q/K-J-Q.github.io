@@ -5,7 +5,12 @@
                 <use xlink:href="#bootstrap"></use>
             </svg>
         </a>
-        <p class="text-muted" id="footerLink">Website Location</p>
+        <p class="text-muted" id="footerLink"></p>
         <p class="text-muted">© Copyright 2022: Jian Quan</p>
     </div>
 </footer>
+
+
+<script>
+    document.getElementById("footerLink").innerHTML = "Website location: " + window.location.toString();
+</script>
