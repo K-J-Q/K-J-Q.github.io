@@ -22,12 +22,12 @@ a.active {
   border-radius: 8px;
 }
 
-p {
-  text-align: justify;
-}
-
 li.active {
   font-weight: bold;
+}
+
+p {
+  text-align: justify;
 }
 
 .col-sm>img,
@@ -37,28 +37,8 @@ li>img {
   margin-top: 10px;
 }
 
-.portrait>img {
-  height: 400px;
-}
-
-.badge {
-  margin-right: 10px;
-}
-
 #projects .list-group-item {
   position: relative;
-}
-
-#smallProfile {
-  width: 300px;
-  border-radius: 50%;
-  border: #2e6da4 solid 5px;
-  display: inline;
-}
-
-#profileDesc {
-  display: inline-block;
-  margin-left: 100px;
 }
 
 #filters label {
@@ -69,19 +49,6 @@ li>img {
   padding: .35em .65em;
 }
 
-.card {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-#skills>div {
-  border: lightgray 1px solid;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
-  min-width: 300px;
-  width: fit-content;
-}
 
 #certs>.row>a {
   text-decoration: initial;
@@ -116,10 +83,6 @@ h2 {
   margin-top: 20px;
 }
 
-#skills>.col-sm>img {
-  height: 150px;
-  margin-bottom: 10px;
-}
 
 
 @media only screen and (max-width: 1200px) {
@@ -146,26 +109,10 @@ h2 {
   }
 
   li>img,
-  .col-sm>img,
-  #skills>.col-sm>img {
+  .col-sm>img {
     width: max-content;
     width: 100%;
     height: auto;
-  }
-
-  #smallProfile {
-    margin: auto;
-    width: 50%;
-    border-radius: 50%;
-    border: #2e6da4 solid 5px;
-    display: block;
-  }
-
-  #profileDesc {
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
   }
 }
 
