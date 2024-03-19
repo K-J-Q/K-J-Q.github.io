@@ -1,177 +1,113 @@
-body{
-    margin: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
+body {
+  margin: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
-#headerLinks{
-    display: none;
+#headerLinks {
+  display: none;
 }
 
 
 @media print {
-  #headerLinks{
+  #headerLinks {
     display: block;
   }
 }
 
 
-a.active{
-    background-color: rgb(0, 132, 255);
-    color: white !important;
-    border-radius: 8px;
+a.active {
+  background-color: rgb(0, 132, 255);
+  color: white !important;
+  border-radius: 8px;
 }
 
-p{
-    text-align: justify;
-}
-li.active{
-    font-weight: bold;
+li.active {
+  font-weight: bold;
 }
 
-.col-sm > img, li > img{
-    height: 200px;
-    margin-right: 10px;
-    margin-top: 10px;
-}
-.portrait > img{
-  height: 400px;
-}
-.badge{
-    margin-right: 10px;
+p {
+  text-align: justify;
 }
 
-#projects .list-group-item{
-    position: relative;
+.col-sm>img,
+li>img {
+  height: 200px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
-#projects .list-group-item .view{
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-.video{
-  position: absolute;
-  right: 100px;
-  bottom: 10px;
-}
-#smallProfile{
-  width: 300px;
-  border-radius: 50%;
-  border: #2e6da4 solid 5px;
-  display: inline;
+#projects .list-group-item {
+  position: relative;
 }
 
-#profileDesc{
-  display: inline-block;
-  margin-left: 100px;
+#filters label {
+  margin: 10px;
+  margin-right: 0px;
+  font-weight: bold;
+  font-size: 0.75em;
+  padding: .35em .65em;
 }
 
-#filters label{
-    margin: 10px;
-    margin-right: 0px;
-    font-weight: bold;
-    font-size: 0.75em;
-    padding: .35em .65em;
-}
 
-.card{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-#skills > div{
-    border: lightgray 1px solid;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    min-width: 300px;
-    width: fit-content;
-}
-#certs > .row > a{
+#certs>.row>a {
   text-decoration: initial;
   color: black;
-   font-weight: bold;
-    text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
-h2{
+h2 {
   margin-top: 20px;
   text-align: center;
 }
 
-.company{
-    color:rgb(50, 137, 218);
+.company {
+  color: rgb(50, 137, 218);
 }
 
-.col{
-    text-align: center;
-    font-weight: bold;
-}
-.nav-item{
+.nav-item {
   text-align: center;
 }
 
-#me{
+#me {
   width: 100%;
 }
 
-.contact{
-  margin-top: 20px;
+.badge {
+  margin-right: 10px;
 }
-
-#skills > .col-sm > img{
-  height: 150px;
-  margin-bottom: 10px;
-}
-
+/* 
 @media only screen and (max-width: 1200px) {
-    body{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .col-sm > img{
-        min-width: 40%;
-    }
-    
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .col-sm>img {
+    min-width: 40%;
+  }
+
 }
 
 @media only screen and (max-width: 800px) {
-    body{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .navbar-nav{
-      display: block;
-      width: 100%;
-    }
-    #projects .list-group-item .btn{
-        position: static;
-        width: 100%;
-        margin: auto;
-        margin-top: 10px;
-    }
-    li > img, .col-sm > img, #skills > .col-sm > img{
-      width: max-content;
-      width: 100%;
-      height: auto;
-    }
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
-    #smallProfile{
-      margin: auto;
-      width: 50%;
-      border-radius: 50%;
-      border: #2e6da4 solid 5px;
-      display: block;
-    }
+  .navbar-nav {
+    display: block;
+    width: 100%;
+  }
 
-    #profileDesc{
-      display: block;
-      margin: auto;
-      margin-top: 20px;
-      text-align: center;
-    }
-}
+  li>img,
+  .col-sm>img {
+    width: max-content;
+    width: 100%;
+    height: auto;
+  }
+} */
 
 
 
@@ -181,6 +117,7 @@ h2{
   padding: 20px 0 20px;
   position: relative;
 }
+
 .timeline:before {
   top: 0;
   bottom: 0;
@@ -191,27 +128,33 @@ h2{
   left: 50%;
   margin-left: -1.5px;
 }
-.timeline > li {
+
+.timeline>li {
   margin-bottom: 20px;
   position: relative;
 }
-.timeline > li:before,
-.timeline > li:after {
+
+.timeline>li:before,
+.timeline>li:after {
   content: " ";
   display: table;
 }
-.timeline > li:after {
+
+.timeline>li:after {
   clear: both;
 }
-.timeline > li:before,
-.timeline > li:after {
+
+.timeline>li:before,
+.timeline>li:after {
   content: " ";
   display: table;
 }
-.timeline > li:after {
+
+.timeline>li:after {
   clear: both;
 }
-.timeline > li > .timeline-panel {
+
+.timeline>li>.timeline-panel {
   width: 46%;
   float: left;
   border: 1px solid #d4d4d4;
@@ -221,7 +164,8 @@ h2{
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
 }
-.timeline > li > .timeline-panel:before {
+
+.timeline>li>.timeline-panel:before {
   position: absolute;
   top: 26px;
   right: -15px;
@@ -232,7 +176,8 @@ h2{
   border-bottom: 15px solid transparent;
   content: " ";
 }
-.timeline > li > .timeline-panel:after {
+
+.timeline>li>.timeline-panel:after {
   position: absolute;
   top: 27px;
   right: -14px;
@@ -243,7 +188,8 @@ h2{
   border-bottom: 14px solid transparent;
   content: " ";
 }
-.timeline > li > .timeline-badge {
+
+.timeline>li>.timeline-badge {
   color: #fff;
   width: 50px;
   height: 50px;
@@ -261,44 +207,55 @@ h2{
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
 }
-.timeline > li.timeline-inverted > .timeline-panel {
+
+.timeline>li.timeline-inverted>.timeline-panel {
   float: right;
 }
-.timeline > li.timeline-inverted > .timeline-panel:before {
+
+.timeline>li.timeline-inverted>.timeline-panel:before {
   border-left-width: 0;
   border-right-width: 15px;
   left: -15px;
   right: auto;
 }
-.timeline > li.timeline-inverted > .timeline-panel:after {
+
+.timeline>li.timeline-inverted>.timeline-panel:after {
   border-left-width: 0;
   border-right-width: 14px;
   left: -14px;
   right: auto;
 }
+
 .timeline-badge.primary {
   background-color: #2e6da4 !important;
 }
+
 .timeline-badge.success {
   background-color: #3f903f !important;
 }
+
 .timeline-badge.warning {
   background-color: #f0ad4e !important;
 }
+
 .timeline-badge.danger {
   background-color: #d9534f !important;
 }
+
 .timeline-badge.info {
   background-color: #5bc0de !important;
 }
+
 .timeline-title {
   margin-top: 0;
   color: inherit;
 }
-.timeline-body > p,
-.timeline-body > ul {
+
+.timeline-body>p,
+.timeline-body>ul {
   margin-bottom: 0;
 }
-.timeline-body > p + p {
+
+.timeline-body>p+p {
   margin-top: 5px;
 }
