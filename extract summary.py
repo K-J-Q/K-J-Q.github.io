@@ -3,10 +3,11 @@ import os
 import re
 from bs4 import BeautifulSoup
 
-certs_path = "certs\\"
+certs_folder = "certs\\"
 experiences_path = "realIndex.html"
 testimonials_path = "testimonials.html"
 projects_path = "projects.html"
+education_path = "education.html"
 
 
 def retrieve_experiences(out):
@@ -55,19 +56,38 @@ def retrieve_projects(out):
 
 def retrieve_certificates(out):
     file_format = (".pdf", ".jpg", ".jpeg", ".png")
-    certs = glob.glob(certs_path + "**", recursive=True)
+    certs = glob.glob(certs_folder + "**", recursive=True)
     
     out.write("\nCertificates: \n")
 
-    l = len(certs_path)
+    l = len(certs_folder)
 
     for cert in certs:
         if cert.endswith(file_format):
             filename = os.path.basename(cert)
             filename_without_ext = os.path.splitext(filename)[0]
-            out.write(filename_without_ext + "\n")
-        elif os.path.isdir(cert) and cert != certs_path:
-            out.write(cert[l:] + ":\n")
+            out.write(f" - {filename_without_ext}\n")
+        elif os.path.isdir(cert) and cert != certs_folder:
+            out.write(f"{cert[l:]}\n")
+
+def retrieve_education(out):
+    with open(education_path, 'r') as f:
+        contents = f.read()
+        
+    soup = BeautifulSoup(contents, 'html.parser')
+
+    container = soup.find('body').find('div', {'class': 'container'})
+
+    out.write("\nEducation:\n")
+
+    for li in container.find_all('li', {'class': ['school', 'timeline-inverted school']}):
+        school = li.find('h4', {'class': 'timeline-title'}).text
+        out.write(school + "\n")
+
+        achievements = li.find('div', {'class': 'timeline-body'}).find('ul')
+        if achievements:
+            for achievement in achievements.find_all('li'):
+                out.write(f" - {achievement.text}\n")
     
 def main():
     out = open("summary.txt", "w")
@@ -75,6 +95,7 @@ def main():
     retrieve_testimonials(out)
     retrieve_projects(out)
     retrieve_certificates(out)
+    retrieve_education(out)
     out.close()
 
 
