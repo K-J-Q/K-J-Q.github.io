@@ -4,7 +4,7 @@ import re
 from bs4 import BeautifulSoup
 
 certs_folder = "certs\\"
-experiences_path = "realIndex.html"
+experiences_path = "idx.html"
 testimonials_path = "testimonials.html"
 projects_path = "projects.html"
 education_path = "education.html"
