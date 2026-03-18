@@ -8,49 +8,1053 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-C3BVW8M12B');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>JQ Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kwa Jian Quan — Embedded Engineer & Software Developer. Portfolio showcasing IoT projects, machine learning, and engineering innovations.">
+    <title>Kwa Jian Quan — Portfolio</title>
     <link rel="icon" href="images/icon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-        </script>
-    <script src="common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 </head>
 
 <body>
-    <div class="position-relative">
-        <img id="me" class="rounded" src="images/picture of me.jpg" alt="">
-        <div class="position-absolute bottom-0 end-0 m-3">
-            <a href="mailto:jianquan08@gmail.com" type="button" class="contact btn btn-primary"><i class="bi bi-envelope"></i> Email Me</a>
-            <a href="Jian Quan Resume.pdf" type="button" class="contact btn btn-primary"><i class="bi bi-file-person-fill"></i> Resume</a>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero" class="nav-brand">Jian Quan</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-photo">
+                <img src="images/picture of me.jpg" alt="Kwa Jian Quan">
+            </div>
+            <div class="hero-text">
+                <p class="hero-greeting">Hi, I'm</p>
+                <h1 class="hero-name"><span class="gradient-text">Kwa Jian Quan</span></h1>
+                <p class="hero-tagline">Embedded Engineer &amp; Software Developer passionate about IoT, machine learning, and building things that make a difference.</p>
+                <div class="hero-ctas">
+                    <a href="mailto:jianquan08@gmail.com" class="btn btn-primary">
+                        <span class="btn-icon">✉</span> Email Me
+                    </a>
+                    <a href="Jian Quan Resume.pdf" class="btn btn-outline">
+                        <span class="btn-icon">📄</span> Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Career</span>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="export-wrapper">
+                    <button class="export-btn" aria-label="Export section" onclick="toggleExportMenu(this)">⬇ Export</button>
+                    <div class="export-menu">
+                        <button onclick="exportSection('experience', 'png')">Save as PNG</button>
+                        <button onclick="exportSection('experience', 'pdf')">Save as PDF</button>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-grid reveal-stagger reveal">
+                <div class="exp-card">
+                    <h3>Embedded Engineer</h3>
+                    <p class="company">Galamad Aerospace</p>
+                    <p class="role-desc">Involved in embedded software development, PCB designs and system coordination.</p>
+                </div>
+                <div class="exp-card">
+                    <h3>Associate Software Engineer</h3>
+                    <p class="company">iWoW Technologies</p>
+                    <p class="role-desc">Involved in various projects, coding microcontrollers, and developing test jigs.</p>
+                </div>
+                <div class="exp-card">
+                    <h3>Internship</h3>
+                    <p class="company">DSO National Laboratories</p>
+                    <p class="role-desc">Worked on a Machine Learning project to identify cochannel noise.</p>
+                </div>
+                <div class="exp-card">
+                    <h3>Mapping Coordinator</h3>
+                    <p class="company">Grab Holdings</p>
+                    <p class="role-desc">Research, data entry and geomapping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">A collection of personal and school projects spanning IoT, hardware, software, and robotics.</p>
+                <div class="export-wrapper">
+                    <button class="export-btn" aria-label="Export section" onclick="toggleExportMenu(this)">⬇ Export</button>
+                    <div class="export-menu">
+                        <button onclick="exportSection('projects', 'png')">Save as PNG</button>
+                        <button onclick="exportSection('projects', 'pdf')">Save as PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-bar reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="personalProj">Personal</button>
+                <button class="filter-btn" data-filter="schoolProj">School</button>
+            </div>
+
+            <div class="projects-timeline" id="projectsList">
+
+                <!-- 2023 -->
+                <div class="year-group reveal">
+                    <div class="year-label">2023</div>
+
+                    <div class="project-card" data-tags="personalProj indiv">
+                        <h3>IOT Weather Station — v2</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/weather station v2 (1).png" alt="Weather station v2 front" loading="lazy">
+                                <img src="projects/images/weather station v2 (2).png" alt="Weather station v2 back" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Enhanced previous weather station project with an E-Ink display for better battery efficiency.</li>
+                                    <li>Developed a purpose-built PCB for dual power sources: solar power and a supercapacitor, alongside traditional battery power.</li>
+                                    <li>Improved battery life from 2 months to over 2 years.</li>
+                                    <li>Integrated UV sensors.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="personalProj indiv">
+                        <h3>EInkBoard — Dashboard</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/EInkCalendar (3).jpg" alt="EInk dashboard photo" loading="lazy">
+                                <img src="projects/images/EInkCalendar (1).jpg" alt="EInk calendar close-up" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Multipurpose E-Ink display capable of showing calendar events, tasks, weather, and more.</li>
+                                    <li>Self-programmed, including API requests to server and power optimization.</li>
+                                    <li>Allows for several months of runtime without charging.</li>
+                                    <li>Proves the feasibility of low-powered calendar displays.</li>
+                                    <li>Useful as a home planner or office scheduler.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="year-group reveal">
+                    <div class="year-label">2022</div>
+
+                    <div class="project-card" data-tags="personalProj indiv">
+                        <h3>HydroTrack — Water Intake Tracker</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <iframe src="https://www.youtube.com/embed/TzTWrF6-Rqo" allowfullscreen title="HydroTrack demo video"></iframe>
+                                <img src="projects/images/Hydrotrack 1.jpg" alt="HydroTrack device" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>HydroTrack is a device designed to help users track their water intake and stay hydrated.</li>
+                                    <li>Features a multi-colored LED ring and mobile phone connectivity for data display and review.</li>
+                                    <li>An accompanying app provides additional features and functionality.</li>
+                                    <li>Helps users ensure adequate daily fluid intake and understand personal water consumption patterns.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj indiv">
+                        <h3>Circuit Design, Soldering &amp; Microcontroller Programming</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/pcb.jpg" alt="Custom PCB board" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>The circuit board was designed using EAGLE.</li>
+                                    <li>Required calculation of resistor values and reading of datasheets.</li>
+                                    <li>Involved soldering components onto the board.</li>
+                                    <li>The project was coded using Atmel Studio.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj personalProj indiv">
+                        <h3>Personal Online Portfolio</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/online website.png" alt="Portfolio website screenshot" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>This website showcases my projects over the years.</li>
+                                    <li>It was created using HTML and Bootstrap.</li>
+                                    <li>The website is responsive and can be viewed on any device.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="year-group reveal">
+                    <div class="year-label">2021</div>
+
+                    <div class="project-card" data-tags="personalProj indiv">
+                        <h3>Fitness Tracker (FitBit Application)</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/fitnessTracker.png" alt="Fitness tracker app" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Developed a fitness tracker application using FitBit Studio.</li>
+                                    <li>Created due to a lack of similar applications on the app store for tracking exercises.</li>
+                                    <li>Enables tracking of both repetition-based and time-based exercises.</li>
+                                    <li>The app is listed on the Fitbit store and has been purchased more than 10 times.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://gallery.fitbit.com/details/1af11b76-0b67-4e07-9000-edf2cc88eeae" class="btn btn-outline btn-small" target="_blank" rel="noopener">👁 View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="personalProj group">
+                        <h3>Engineering Innovation Challenge (First Runner Up)</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-group">Groupwork</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/eic.jpg" alt="Engineering Innovation Challenge team" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Represented school in the Engineering Innovation Challenge on "Ionising Radiation".</li>
+                                    <li>Conducted research and experiments to understand ionising radiation.</li>
+                                    <li>Created a prototype and presented it to a panel of judges.</li>
+                                    <li>Achieved the position of first runner up.</li>
+                                    <li>Official website: <a href="https://www.science.edu.sg/for-schools/competitions/energy-innovation-challenge" target="_blank" rel="noopener">EIC 2021</a></li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="projects/EIC.pdf" class="btn btn-outline btn-small" target="_blank">👁 View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="personalProj indiv">
+                        <h3>E-Ink School Calendar</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/eink.jpg" alt="E-Ink calendar display" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Personal project for convenience in checking my timetable.</li>
+                                    <li>Required an intricate program to securely retrieve data from my calendar.</li>
+                                    <li>Battery-powered and designed for energy efficiency, lasting multiple months on a single charge.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="projects/Wireless E-Ink Display Summary.pdf" class="btn btn-outline btn-small" target="_blank">👁 View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj group">
+                        <h3>LibraLink</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-group">Groupwork</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/libralink.jpg" alt="LibraLink smart library system" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>School assignment to create a smart connected system for a library.</li>
+                                    <li>Features include noise detection and a vibration sensor.</li>
+                                    <li>All sensor data is accessible through a website for on-demand viewing.</li>
+                                    <li>The demo website uses simulated data.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="projects/sem2/index.html" class="btn btn-outline btn-small" target="_blank">👁 View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj group">
+                        <h3>Hand Hygienics</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-group">Groupwork</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/handHygenics.jfif" alt="Hand Hygienics M5Stack project" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Won second place in the M5-Stack industry <a href="https://shop.m5stack.com/blogs/news/m5stack-and-nyp-collaborates-on-covid-19-projects" target="_blank" rel="noopener">competition</a>.</li>
+                                    <li>Chosen as the top project by the school.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://www.hackster.io/e1-teap-3/hand-hygienics-5e04a9" class="btn btn-outline btn-small" target="_blank" rel="noopener">👁 View</a>
+                                    <a href="https://youtu.be/357IqdPx7SU" class="btn btn-outline btn-small" target="_blank" rel="noopener" style="border-color: var(--accent-rose); color: var(--accent-rose);">▶ Video</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="year-group reveal">
+                    <div class="year-label">2020</div>
+
+                    <div class="project-card" data-tags="personalProj indiv">
+                        <h3>IOT Weather Station</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/weatherstation.jpg" alt="IOT weather station" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>This device displays air temperature, humidity, and light intensity.</li>
+                                    <li>A schematic was created from scratch and hand-soldered onto a PCB perf board.</li>
+                                    <li>A 3D designed enclosure was created and printed to house all components.</li>
+                                    <li>Components include: battery, PCB board, microcontroller, display, and multiple sensors.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="projects/Weather Station.pdf" class="btn btn-outline btn-small" target="_blank">👁 View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="personalProj indiv">
+                        <h3>Focus Assist</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-personal">Personal</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/focus.jpg" alt="Focus assist prototype" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Prototype developed to test skills.</li>
+                                    <li>Purpose was to lock away distractions such as phones and earpieces.</li>
+                                    <li>Provided an opportunity to practice programming on the Raspberry Pi Pico microcontroller.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="projects/Focus Assistant.pdf" class="btn btn-outline btn-small" target="_blank">👁 View</a>
+                                    <a href="https://youtu.be/lP9iciva5b0" class="btn btn-outline btn-small" target="_blank" rel="noopener" style="border-color: var(--accent-rose); color: var(--accent-rose);">▶ Video</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj indiv">
+                        <h3>Food Stall Website</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/webDesign.png" alt="Food stall website" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Website created from scratch for an economical rice stall.</li>
+                                    <li>Features include a detailed menu with prices and customer reviews.</li>
+                                    <li>An online ordering system was developed for customer convenience.</li>
+                                    <li>The location of the stall is also provided on the website.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="projects/sem1/index.html" class="btn btn-outline btn-small" target="_blank">👁 View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj indiv">
+                        <h3>Smart Carpark</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-individual">Individual</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/smartCarPark.jpg" alt="Smart carpark project" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Showcased creativity, electronics, reporting, and programming skills.</li>
+                                    <li>Involved careful planning and execution of hundreds of components.</li>
+                                    <li>Recognized as the top project by the school.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="projects/Smart Carpark.pdf" class="btn btn-outline btn-small" target="_blank">👁 View</a>
+                                    <a href="https://youtu.be/8uZyaMhKqPE" class="btn btn-outline btn-small" target="_blank" rel="noopener" style="border-color: var(--accent-rose); color: var(--accent-rose);">▶ Video</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="year-group reveal">
+                    <div class="year-label">2019</div>
+
+                    <div class="project-card" data-tags="schoolProj group">
+                        <h3>Micro:Bit Project</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-group">Groupwork</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/MicroBit CEO.jpg" alt="Micro:Bit project with CEO" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Developed a microbit-based program linked with a concentration tracker and mobile phone app.</li>
+                                    <li>Displays prompts on the built-in LED matrix and sounds alerts when non-concentration is detected.</li>
+                                    <li>Showcased to the CEO of the micro:bit foundation, Gareth Stockdale.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj group">
+                        <h3>RoboCup Competition 2019</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-group">Groupwork</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/robocup.png" alt="RoboCup competition" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Participated in the Robocup competition with my team.</li>
+                                    <li>The competition involved writing programs and competing for the best score.</li>
+                                    <li>Competed against teams from other local schools and from other countries.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2018 -->
+                <div class="year-group reveal">
+                    <div class="year-label">2018</div>
+
+                    <div class="project-card" data-tags="schoolProj group">
+                        <h3>Tech Saturday Event</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-group">Groupwork</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/techSaturday.jpg" alt="Tech Saturday event booth" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>As part of the Applied Learning Program, my team developed a shooting game.</li>
+                                    <li>Displayed at the Tech Saturday event by IMDA.</li>
+                                    <li>Attracted many visitors, including Dr Yaacob Ibrahim and local celebrity Mr Romeo Tan.</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://peihwasec.moe.edu.sg/tech-saturday/" class="btn btn-outline btn-small" target="_blank" rel="noopener">👁 View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tags="schoolProj group">
+                        <h3>RoboCup Competition 2018</h3>
+                        <div class="project-tags">
+                            <span class="tag tag-school">School</span>
+                            <span class="tag tag-group">Groupwork</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-images">
+                                <img src="projects/images/robocup.png" alt="RoboCup competition 2018" loading="lazy">
+                            </div>
+                            <div class="project-details">
+                                <ul>
+                                    <li>Participated in the Robocup competition with my team.</li>
+                                    <li>The competition involved writing programs and competing for the best score.</li>
+                                    <li>Competed against teams from other local schools and from other countries.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section id="education">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Background</span>
+                <h2 class="section-title">Education</h2>
+                <div class="export-wrapper">
+                    <button class="export-btn" aria-label="Export section" onclick="toggleExportMenu(this)">⬇ Export</button>
+                    <div class="export-menu">
+                        <button onclick="exportSection('education', 'png')">Save as PNG</button>
+                        <button onclick="exportSection('education', 'pdf')">Save as PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edu-timeline">
+                <div class="edu-item reveal">
+                    <div class="edu-card">
+                        <h3>National University of Singapore</h3>
+                        <p class="program">Computer Engineering</p>
+                        <ul>
+                            <li>NUS Global Merit Scholarship</li>
+                            <li>LKY-STEP Award</li>
+                            <li>NUS Venture Initiation Programme (VIP) Funding</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="edu-item reveal">
+                    <div class="edu-card">
+                        <h3>Nanyang Polytechnic</h3>
+                        <p class="program">Electronic &amp; Computer Engineering</p>
+                        <p class="awards-category">Graduating Awards</p>
+                        <ul>
+                            <li>Diploma with Merit</li>
+                            <li>GOLD Award (Academic)</li>
+                            <li>GOLD Award (IOE)</li>
+                            <li>Calyon Creativity Award</li>
+                            <li>Outstanding project work</li>
+                        </ul>
+                        <p class="awards-category">Semester Awards</p>
+                        <ul>
+                            <li>Engineering Innovation Challenge 1st Runner Up</li>
+                            <li>M5-Stack Challenge (2nd Place)</li>
+                            <li>DSO Diploma Scholarship</li>
+                            <li>Class representative</li>
+                            <li>Peer Tutoring Service Award</li>
+                            <li>Top in course for Year 3 Semester 2</li>
+                            <li>Top in course for Year 2 Semester 2</li>
+                            <li>Top in course for Year 2 Semester 1</li>
+                            <li>Director's List for Year 3 Semester 1</li>
+                            <li>Director's List for Year 2 Semester 2</li>
+                            <li>Director's List for Year 2 Semester 1</li>
+                            <li>Director's List for Year 1 Semester 2</li>
+                            <li>Director's List for Year 1 Semester 1</li>
+                            <li>Innovative Project Award for Year 1 Semester 2</li>
+                            <li>Innovative Project Award for Year 1 Semester 1</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="edu-item reveal">
+                    <div class="edu-card">
+                        <h3>Pei Hwa Secondary School</h3>
+                        <ul>
+                            <li>Vice President of Robotics</li>
+                            <li>Vice President service award</li>
+                            <li>Innovative project award</li>
+                            <li>PRIDE (excellence in conduct) award</li>
+                            <li>Robotics Competition (RoboCup) 1st Place</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CERTIFICATES ========== -->
+    <section id="certificates">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Credentials</span>
+                <h2 class="section-title">Certificates</h2>
+                <div class="export-wrapper">
+                    <button class="export-btn" aria-label="Export section" onclick="toggleExportMenu(this)">⬇ Export</button>
+                    <div class="export-menu">
+                        <button onclick="exportSection('certificates', 'png')">Save as PNG</button>
+                        <button onclick="exportSection('certificates', 'pdf')">Save as PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Courses -->
+            <div class="cert-category reveal">
+                <h3 class="cert-category-title">Additional Courses</h3>
+                <div class="cert-grid" id="certMain"></div>
+                <button class="btn btn-outline btn-small cert-toggle-btn" id="certToggle" onclick="toggleMoreCerts()">Show More</button>
+                <div class="cert-grid cert-hidden" id="certMore"></div>
+            </div>
+
+            <!-- University -->
+            <div class="cert-category reveal">
+                <h3 class="cert-category-title">University</h3>
+                <div class="cert-grid" id="certUni"></div>
+            </div>
+
+            <!-- Polytechnic -->
+            <div class="cert-category reveal">
+                <h3 class="cert-category-title">Polytechnic</h3>
+                <div class="cert-grid" id="certPoly"></div>
+            </div>
+
+            <!-- Secondary -->
+            <div class="cert-category reveal">
+                <h3 class="cert-category-title">Secondary</h3>
+                <div class="cert-grid" id="certSec"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section id="testimonials">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">References</span>
+                <h2 class="section-title">Testimonials</h2>
+                <div class="export-wrapper">
+                    <button class="export-btn" aria-label="Export section" onclick="toggleExportMenu(this)">⬇ Export</button>
+                    <div class="export-menu">
+                        <button onclick="exportSection('testimonials', 'png')">Save as PNG</button>
+                        <button onclick="exportSection('testimonials', 'pdf')">Save as PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-nda reveal">
+                <h3>iWoW Technologies</h3>
+                <p>NDA — available upon request only</p>
+                <a href="mailto:jianquan08@gmail.com" class="btn btn-primary btn-small">
+                    <span class="btn-icon">✉</span> Email Me
+                </a>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <h3>Extracurricular Activities Testimonial (Robotics)</h3>
+                <img src="testimonials/a.png" alt="Robotics testimonial" loading="lazy">
+            </div>
+
+            <div class="testimonial-card reveal">
+                <h3>Secondary Graduation Testimonial</h3>
+                <img src="testimonials/b.png" alt="Graduation testimonial" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#certificates">Certificates</a>
+                <a href="mailto:jianquan08@gmail.com">Contact</a>
+            </div>
+            <p class="footer-copy">© 2025 Kwa Jian Quan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========== LIGHTBOX MODAL ========== -->
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-close" aria-label="Close lightbox">✕</button>
+        <img src="" alt="Certificate full view" id="lightboxImg">
     </div>
-    <h2>Job experiences</h2>
-    <ul id="job" class="list-group">
-        <li class="list-group-item">
-            <h4 class="card-title">Embedded Engineer at <span class="company">Galamad Aerospace</span></h4>
-            <h5 class="card-subtitle mb-2 text-muted">I was involved in embedded software development, PCB designs and system coordination./h5>
-        </li>
-        <li class="list-group-item">
-            <h4 class="card-title">Associate Software Engineer at <span class="company">iWoW Technologies</span></h4>
-            <h5 class="card-subtitle mb-2 text-muted">I was involved in various projects, coding microcontrollers, and developing test jigs.</h5>
-        </li>
-        <li class="list-group-item">
-            <h4 class="card-title">Internship at <span class="company">DSO National Laboratories</span></h4>
-            <h5 class="card-subtitle mb-2 text-muted">I worked on a Machine Learning project to identify cochannel noise.</h5></li>
-        <li class="list-group-item">
-            <h4 class="card-title">Mapping Coordinator at <span class="company">Grab Holdings</span></h4>
-            <h5 class="card-subtitle mb-2 text-muted">Research, data entry and geomapping.</h5>
-        </li>
-    </ul>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // -------------------------
+        // Certificate Data
+        // -------------------------
+        const certData = {
+            main: [
+                'certs/Additional/Google Professional Machine Learning Engineer.png',
+                'certs/Additional/Certified Usability Analyst.png',
+                'certs/Additional/Deep Learning Specialisation.png',
+                'certs/Additional/Natural Language Processing (NLP) Specialisation.png',
+                'certs/Additional/Generative Adversarial Networks (GANs) Specialisation.png',
+                'certs/Additional/Machine Learning Engineering for Production (MLOps).png',
+                'certs/Additional/Adv Data Analytics Specialisation.png',
+                'certs/Additional/IT Automation Specialisation.jpg',
+                'certs/Additional/Cybersecurity Specialisation.jpg',
+                'certs/Additional/ITIL Foundation.png',
+                'certs/Additional/Certified Associate in Project Management (CAPM).png',
+                'certs/Additional/Certified Scrum Master (CSM).png',
+                'certs/Additional/Certified Ethical Hacker (CEH).png',
+            ],
+            more: [
+                'certs/Additional/SYFC 1.jpg',
+                'certs/Additional/SYFC 2.jpg',
+                'certs/Additional/SYFC 3.jpg',
+                'certs/Additional/AI for Everyone.png',
+                'certs/Additional/Data Analytics Specialisation.png',
+                'certs/Additional/Astronomy Exploring Time and Space.jpg',
+                'certs/Additional/Machine Learning.png',
+                'certs/Additional/Flutter app development.png',
+                'certs/Additional/Inventor.png',
+                'certs/Additional/Fusion 360.png',
+                'certs/Additional/Introduction to HTML.jpg',
+                'certs/Additional/Introduction to CSS3.jpg',
+                'certs/Additional/Interactivity with JavaScript.jpg'
+            ],
+            uni: [
+                'certs/Uni/Top Students_CS2040C.png',
+                'certs/Uni/NOC.png',
+            ],
+            poly: [
+                'certs/Poly/Diploma.jpeg',
+                'certs/Poly/Diploma Plus.jpeg',
+                'certs/Poly/Calyon Creativity Award.jpeg',
+                'certs/Poly/GOLD Award (Academic).jpeg',
+                'certs/Poly/Gold Award (IOE).jpeg',
+                'certs/Poly/Project Award.jpeg',
+                'certs/Poly/Top in courses (3 semesters).png',
+                'certs/Poly/Director Lists (all semesters).png',
+                'certs/Poly/Peer tutoring.jpg',
+                'certs/Poly/Edusave Academic 2021.jpg',
+                'certs/Poly/Edusave Academic 2022.jpg',
+                'certs/Poly/Edusave Skills Award 2023.jpg',
+                'certs/Poly/DSO Scholarship.jpg',
+                'certs/Poly/Engineering Innovation Challenge.png'
+            ],
+            sec: [
+                'certs/Sec/Robotics 2016 (1).jpg',
+                'certs/Sec/Robotics 2016 (2).jpg',
+                'certs/Sec/Robotics 2017.jpg',
+                'certs/Sec/Robotics 2018.jpg',
+                'certs/Sec/Robotics 2019.jpg',
+                'certs/Sec/Robotics Appointment.jpg',
+                'certs/Sec/Robotics Appreciation.jpg',
+                'certs/Sec/Robotics Service.jpg',
+                'certs/Sec/Maker Faire.jpg',
+                'certs/Sec/Innovative Award.jpg',
+                'certs/Sec/Edusave Academic 2018.jpg',
+                'certs/Sec/Edusave GPA 2018.jpg',
+                'certs/Sec/Excellence in conduct.jpg'
+            ]
+        };
+
+        function renderCerts(paths, containerId) {
+            const container = document.getElementById(containerId);
+            paths.forEach(path => {
+                const name = path.split('/').pop().split('.')[0];
+                const item = document.createElement('div');
+                item.className = 'cert-item';
+                item.innerHTML = `<img src="${path}" alt="${name}" loading="lazy"><span class="cert-name">${name}</span>`;
+                item.addEventListener('click', () => openLightbox(path));
+                container.appendChild(item);
+            });
+        }
+
+        renderCerts(certData.main, 'certMain');
+        renderCerts(certData.more, 'certMore');
+        renderCerts(certData.uni, 'certUni');
+        renderCerts(certData.poly, 'certPoly');
+        renderCerts(certData.sec, 'certSec');
+
+        // Toggle more certs
+        function toggleMoreCerts() {
+            const el = document.getElementById('certMore');
+            const btn = document.getElementById('certToggle');
+            el.classList.toggle('show');
+            btn.textContent = el.classList.contains('show') ? 'Show Less' : 'Show More';
+        }
+
+        // -------------------------
+        // Lightbox
+        // -------------------------
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // -------------------------
+        // Navbar scroll effect
+        // -------------------------
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // -------------------------
+        // Mobile hamburger menu
+        // -------------------------
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // -------------------------
+        // Active nav link on scroll
+        // -------------------------
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navItems.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+
+        // -------------------------
+        // Project Filtering
+        // -------------------------
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        const yearGroups = document.querySelectorAll('.year-group');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.tags.includes(filter)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Hide empty year groups
+                yearGroups.forEach(group => {
+                    const visibleCards = group.querySelectorAll('.project-card:not([style*="display: none"])');
+                    group.style.display = visibleCards.length === 0 ? 'none' : '';
+                });
+            });
+        });
+
+        // -------------------------
+        // Scroll Reveal (IntersectionObserver)
+        // -------------------------
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // -------------------------
+        // Export Section (PNG / PDF)
+        // -------------------------
+        function toggleExportMenu(btn) {
+            const menu = btn.nextElementSibling;
+            // Close all other open menus first
+            document.querySelectorAll('.export-menu.open').forEach(m => {
+                if (m !== menu) m.classList.remove('open');
+            });
+            menu.classList.toggle('open');
+        }
+
+        // Close menus when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.export-wrapper')) {
+                document.querySelectorAll('.export-menu.open').forEach(m => m.classList.remove('open'));
+            }
+        });
+
+        async function exportSection(sectionId, format) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            // Close the menu
+            document.querySelectorAll('.export-menu.open').forEach(m => m.classList.remove('open'));
+
+            // Temporarily make all reveal elements visible for capture
+            const reveals = section.querySelectorAll('.reveal:not(.visible)');
+            reveals.forEach(el => el.classList.add('visible'));
+
+            // Temporarily show all hidden content for full capture
+            const hiddenCerts = section.querySelectorAll('.cert-hidden:not(.show)');
+            hiddenCerts.forEach(el => el.classList.add('show'));
+
+            const hiddenCards = section.querySelectorAll('.project-card[style*="display: none"]');
+            hiddenCards.forEach(el => { el.dataset.wasHidden = 'true'; el.style.display = ''; });
+
+            const hiddenGroups = section.querySelectorAll('.year-group[style*="display: none"]');
+            hiddenGroups.forEach(el => { el.dataset.wasHidden = 'true'; el.style.display = ''; });
+
+            // Hide export buttons themselves from the capture
+            const exportBtns = section.querySelectorAll('.export-wrapper');
+            exportBtns.forEach(el => el.style.display = 'none');
+
+            // Hide filter bar from capture
+            const filterBar = section.querySelector('.filter-bar');
+            if (filterBar) filterBar.style.display = 'none';
+
+            // Hide cert toggle button from capture
+            const certToggle = section.querySelector('.cert-toggle-btn');
+            if (certToggle) certToggle.style.display = 'none';
+
+            try {
+                const canvas = await html2canvas(section, {
+                    backgroundColor: '#f8fafc',
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                });
+
+                if (format === 'png') {
+                    const link = document.createElement('a');
+                    link.download = `${sectionId}-section.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                } else if (format === 'pdf') {
+                    const { jsPDF } = window.jspdf;
+                    const imgData = canvas.toDataURL('image/png');
+                    const imgWidth = canvas.width;
+                    const imgHeight = canvas.height;
+
+                    // Use landscape or portrait based on aspect ratio
+                    const orientation = imgWidth > imgHeight ? 'l' : 'p';
+                    const pdf = new jsPDF(orientation, 'px', [imgWidth, imgHeight]);
+                    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                    pdf.save(`${sectionId}-section.pdf`);
+                }
+            } catch (err) {
+                console.error('Export failed:', err);
+                alert('Export failed. Please try again.');
+            } finally {
+                // Restore hidden content to original state
+                hiddenCerts.forEach(el => el.classList.remove('show'));
+                hiddenCards.forEach(el => { if (el.dataset.wasHidden) { el.style.display = 'none'; delete el.dataset.wasHidden; } });
+                hiddenGroups.forEach(el => { if (el.dataset.wasHidden) { el.style.display = 'none'; delete el.dataset.wasHidden; } });
+                exportBtns.forEach(el => el.style.display = '');
+                if (filterBar) filterBar.style.display = '';
+                if (certToggle) certToggle.style.display = '';
+            }
+        }
+    </script>
 </body>
 
 </html>
