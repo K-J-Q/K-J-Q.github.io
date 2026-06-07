@@ -11,20 +11,41 @@ education_path = "education.html"
 
 
 def retrieve_experiences(out):
-    with open(experiences_path, 'r') as file:
+    with open(experiences_path, "r", encoding="utf-8") as file:
         html_content = file.read()
 
     soup = BeautifulSoup(html_content, 'html.parser')
-    jobs = soup.find('ul', {'id': 'job'}).find_all('li', class_='list-group-item')
 
     out.write("\nExperiences:\n")
-    for job in jobs:
-        title = job.find('h4', class_='card-title').text.strip()
-        description = job.find('h5', class_='card-subtitle mb-2 text-muted').text.strip()
+    jobs_container = soup.find('ul', {'id': 'job'})
+    if jobs_container:
+        jobs = jobs_container.find_all('li', class_='list-group-item')
+        for job in jobs:
+            title = job.find('h4', class_='card-title').text.strip()
+            description = job.find('h5', class_='card-subtitle mb-2 text-muted').text.strip()
+            out.write(f"{title}\n - {description}\n")
+        return
+
+    experiences_section = soup.find('section', {'id': 'experience'})
+    if not experiences_section:
+        raise ValueError(f"Unable to find experience content in {experiences_path}.")
+
+    experience_cards = experiences_section.find_all('div', class_='exp-card')
+    if not experience_cards:
+        raise ValueError(f"Unable to find experience cards in {experiences_path}.")
+
+    for card in experience_cards:
+        title_node = card.find(['h3', 'h4'])
+        company_node = card.find('p', class_='company')
+        role_node = card.find('p', class_='role-desc')
+
+        title = title_node.get_text(strip=True) if title_node else "Unknown Role"
+        details = [node.get_text(strip=True) for node in [company_node, role_node] if node]
+        description = " — ".join(details) if details else "No description available."
         out.write(f"{title}\n - {description}\n")
 
 def retrieve_testimonials(out):
-    with open(testimonials_path, 'r') as file:
+    with open(testimonials_path, "r", encoding="utf-8") as file:
         html_content = file.read()
 
     soup = BeautifulSoup(html_content, 'html.parser')
@@ -36,7 +57,7 @@ def retrieve_testimonials(out):
         out.write(f"{testimonial.text}\n")
 
 def retrieve_projects(out):
-    with open(projects_path, 'r') as file:
+    with open(projects_path, "r", encoding="utf-8") as file:
         html_content = file.read()
 
     soup = BeautifulSoup(html_content, 'html.parser')
@@ -71,7 +92,7 @@ def retrieve_certificates(out):
             out.write(f"{cert[l:]}\n")
 
 def retrieve_education(out):
-    with open(education_path, 'r') as f:
+    with open(education_path, "r", encoding="utf-8") as f:
         contents = f.read()
         
     soup = BeautifulSoup(contents, 'html.parser')
@@ -90,13 +111,12 @@ def retrieve_education(out):
                 out.write(f" - {achievement.text}\n")
     
 def main():
-    out = open("summary.txt", "w")
-    retrieve_experiences(out)
-    retrieve_testimonials(out)
-    retrieve_projects(out)
-    retrieve_certificates(out)
-    retrieve_education(out)
-    out.close()
+    with open("summary.txt", "w", encoding="utf-8") as out:
+        retrieve_experiences(out)
+        retrieve_testimonials(out)
+        retrieve_projects(out)
+        retrieve_certificates(out)
+        retrieve_education(out)
 
 
 if __name__ == "__main__":
